@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tags extends="generic">
+	<tag label="&amp;modules.photoalbum.bo.tags.album-list;" icon="list-block">functional_photoalbum_album-list</tag>
+	<tag label="&amp;modules.photoalbum.bo.tags.album-detail;" icon="photoalbum">functional_photoalbum_album-detail</tag>
+</tags>

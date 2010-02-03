@@ -1,0 +1,9 @@
+<div>
+	<h3 tal:condition="configuration/getPrintcontainer" change:h="">${container/getLabel}</h3>
+	<p change:create="" model="photoalbum/album" parentId="${container/getId}"><tal:block change:translate="&modules.photoalbum.frontoffice.create-new-album-in-topic;; containerLabel container/getLabel">Créer un album dans la rubrique ${container/getLabel}</tal:block></p>
+	<ol class="photoalbum">
+		<tal:block tal:repeat="item paginator">
+			<span change:include="module 'photoalbum'; template 'Photoalbum-Block-AlbumList-Success'; type 'html'; item item" />
+		</tal:block>
+	</ol>
+</div>

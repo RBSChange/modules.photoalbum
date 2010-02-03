@@ -1,0 +1,103 @@
+<h3 change:h="">${item/getLabel} <a change:edit="document item"/></h3>
+
+<p change:create="" model="photoalbum/photo" parentId="${item/getId}"><tal:block change:translate="&modules.photoalbum.frontoffice.create-new-photo-in-album;; albumLabel item/getLabel">Ajouter une nouvelle photo dans l'album ${item/getLabel}</tal:block></p>
+
+<div tal:condition="unpublishedPhoto">
+	<img change:media="document unpublishedPhoto/getMedia; format 'modules.photoalbum.frontoffice/photopreview'; zoom 'true'" />
+	<h4 change:h="">${unpublishedPhoto/getLabel} <a change:edit="document unpublishedPhoto"/></h4>
+	<p class="normal" tal:content="unpublishedPhoto/getSummaryAsHtml">description de la photo, lorem ipsum dolor sit amet</p>
+	<p class="normal" tal:condition="unpublishedPhoto/getMediahd"><span i18n:translate="&modules.photoalbum.frontoffice.DownloadHDLabel;">Version HD</span>
+	<a change:download="document unpublishedPhoto/getMediahd"/></p>
+	<p class="normal" tal:condition="unpublishedPhoto/getCopyright"><span i18n:translate="&modules.photoalbum.frontoffice.CopyrightLabel;" tal:omit-tag="">Copyright</span>
+	<span tal:replace="unpublishedPhoto/getCopyright">RBS</span></p>
+</div>
+
+<div class="photopreview">
+	<div id="previewinfos">
+		<div id="previewinfodata">
+		<span change:include="module 'photoalbum'; template 'Photoalbum-Block-Photo-Infos'; type 'html'; album item" />
+		</div>
+	</div>
+</div>
+
+<div class="selectorcontainer">
+	<p class="normal" tal:condition="usediaporama"><a id="diaporamalink" change:currentPageLink="diaporamaparams" class="link" style="visibility: hidden;"><img change:icon="projection-screen/small" alt="" /><tal:block change:translate="&modules.photoalbum.frontoffice.Diaporama-view;">Diaporama</tal:block></a></p>
+	<div id="selectorcontainer">
+		<span change:include="module 'photoalbum'; template 'Photoalbum-Block-Album-Selector'; type 'html'; item item" />
+	</div>
+</div>
+
+<script type="text/javascript">
+<!--
+var PhotoAlbum = {
+	onSelectorClick : function(e) {
+    		var pageindex = $(this).attr('change:pageindex');
+    		var lang = pageHandler.lang;
+    		PhotoAlbum.loadSelector(PhotoAlbum.albumid, pageindex, PhotoAlbum.pageSize, lang);
+    		return false;
+    	},
+    	
+    loadSelector : function(albumid, pageindex, pagesize, lang) {
+    	$('#selectorcontainer').load('/index.php', {currentpageindex: pageindex, pagesize: pagesize, module: 'photoalbum', action: 'Selector', cmpref: albumid, lang: lang}, PhotoAlbum.bindSelector);
+    	return false;
+    },
+    	
+	onSelectorImgClick : function(e) {
+			var elem = $(this);
+			var newPageIndex = elem.attr('change:pageindex');
+			if (newPageIndex != null && newPageIndex != PhotoAlbum.currentPageIndex)
+			{
+				PhotoAlbum.loadSelector(PhotoAlbum.albumid, newPageIndex, PhotoAlbum.pageSize, pageHandler.lang);
+			}
+			
+			var photoid = elem.attr('change:photoid'); 
+			var previewInfos = $('#previewinfos');
+			previewInfos.css("width", previewInfos.width()+"px");
+			previewInfos.css("height", previewInfos.height()+"px");
+  			previewInfos.load('/index.php', {module: 'photoalbum', action: 'PhotoInfos', cmpref: photoid, lang: pageHandler.lang, pagesize: PhotoAlbum.pageSize, currentPageId : pageHandler.id, currentURL : window.location}, PhotoAlbum.bindPreview);
+  			
+  			return false;
+  		},
+  
+  	bindSelector: function() {
+		$('a.photoselector').each(function(index, domElement) 
+    	{
+			$(domElement).attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
+		})
+
+		$('#previousselector').attr('href', 'javascript:;').bind('click', PhotoAlbum.onSelectorClick);  
+		$('#nextselector').attr('href', 'javascript:;').bind('click', PhotoAlbum.onSelectorClick);
+		return false;
+  	},
+  	
+  	updatePreview: function() {
+  		PhotoAlbum.bindPreview();
+  	},
+
+	bindPreview: function() {
+		$('#previewPhoto').load(function () {
+			var previewInfosData = $('#previewinfosdata');
+			var previewInfos = $('#previewinfos');
+			previewInfos.css("width", previewInfosData.width());
+			previewInfos.css("height", previewInfosData.height());
+		});
+		var photoInfoControl = $('#photoalbum_infocontrol');
+		PhotoAlbum.currentPageIndex = photoInfoControl.attr('change:currentpageindex');
+		PhotoAlbum.pageSize = photoInfoControl.attr('change:pagesize');
+		PhotoAlbum.albumid = photoInfoControl.attr('change:albumid');
+		$('#photoinfocontrolprevious').attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
+		$('#photoinfocontrolnext').attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
+		$('#previewinfos a.lightbox').fancybox();
+		
+  		return false;
+  	}
+};
+
+$(document).ready(function() 
+{
+	$("#diaporamalink").css("visibility", "visible");
+    PhotoAlbum.bindSelector();
+    PhotoAlbum.bindPreview();
+});
+//-->
+</script>

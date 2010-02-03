@@ -1,0 +1,54 @@
+<ul id="controls">
+	<li id="diaporamaprev" class="first"><a class="link" href="javascript:;"><span i18n:translate="&modules.photoalbum.frontoffice.Diapoprevious;">Prev</span></a></li>
+	<li id="diaporamapause"><a class="link" href="javascript:;"><span i18n:translate="&modules.photoalbum.frontoffice.Diapopause;">Pause</span></a></li>
+	<li id="diaporamaresume"><a class="link" href="javascript:;"><span i18n:translate="&modules.photoalbum.frontoffice.Diapostart;">Start</span></a></li>
+	<li id="diaporamanext"><a class="link" href="javascript:;"><span i18n:translate="&modules.photoalbum.frontoffice.Diaponext;">Next</span></a></li>
+	<li id="diaporamaexit" class="last"><a class="link" change:link="document item;photoalbumParam[diaporama] '0'"><span i18n:translate="&modules.photoalbum.frontoffice.Diapoexit;">Quitter</span></a></li>
+</ul>
+<div id="diaporama">
+	<div id="photozone">
+		<div tal:repeat="photo item/getPublishedPhotos">
+			<h4 tal:condition="configuration/getDiaporamaincludestext" change:h="">${photo/getLabel}</h4>
+			<img class="image" tal:attributes="src photo/getDiaporamaUrl;title photo/getLabel;alt photo/getLabel;id photo/getId"/>
+			<p tal:condition="configuration/getDiaporamaincludestext" class="normal" tal:content="photo/getSummaryAsHtml">description de la photo, lorem ipsum dolor sit amet</p>
+			<tal:block tal:condition="configuration/getDiaporamaincludestext" class="normal">
+				<p tal:condition="photo/getCopyright">
+				<tal:block change:translate="&modules.photoalbum.frontoffice.CopyrightLabel;">Copyright</tal:block>
+				<span tal:replace="photo/getCopyright">RBS</span>
+				</p>
+			</tal:block>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+<!--
+$(document).ready(function() {
+	$('#photozone').cycle({ 
+	    fx:      'fade', 
+	    timeout: 3000,
+	    next:   '#diaporamaprev', 
+	    prev:   '#diaporamanext',
+	    prevNextClick: stopAnimation
+	});
+
+	$('#diaporamapause').bind('click', function(){
+		$('#photozone').cycle('pause');
+		$('#diaporamapause').css('display', 'none');
+		$('#diaporamaresume').css('display', 'inline');
+	}).css('display', 'inline');
+	
+	$('#diaporamaresume').bind('click', function(){
+		$('#photozone').cycle('resume');
+		$('#diaporamapause').css('display', 'inline');
+		$('#diaporamaresume').css('display', 'none');
+	}).css('display', 'none');
+});
+
+function stopAnimation(isNext, zeroBasedSlideIndex, slideElement)
+{
+	$('#photozone').cycle('pause');
+	$('#diaporamapause').css('display', 'none');
+	$('#diaporamaresume').css('display', 'inline');
+}
+//-->
+</script>

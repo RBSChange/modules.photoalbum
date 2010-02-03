@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<localization>
+  <entity id="album-list">
+    <locale lang="fr">page de liste des albums de la rubrique</locale>
+    <locale lang="de">Listenseite der Rubrikalben</locale>
+  </entity>
+  <entity id="album-detail">
+    <locale lang="fr">page de détail d'un album de la rubrique</locale>
+    <locale lang="de">Detailseite eines Rubrikalbums</locale>
+  </entity>
+</localization>

@@ -1,0 +1,9 @@
+<div>
+	<h3 class="heading-three" tal:content="container/getLabel"></h3>
+	
+	<ol class="photoalbum">
+		<span tal:repeat="item paginator" tal:omit-tag="">
+			<span change:include="module 'photoalbum'; template 'Photoalbum-Block-AlbumList-Success'; type 'html'; item item" />
+		</span>
+	</ol>
+</div>

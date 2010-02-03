@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://www.rbs.fr/schema/change-document/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.rbs.fr/schema/change-document/1.0 http://www.rbschange.fr/static/schema/change-document/1.0.xsd"
+	model-version="1.0" icon="photo" indexable="true" has-url="false" publish-on-day-change="true">
+	<properties>
+		<add name="summary" type="LongString" localized="true" />
+		<add name="media" type="modules_media/media" min-occurs="1" cascade-delete="true" />
+		<add name="thumbnail" type="modules_media/media" cascade-delete="true" />
+		<add name="mediahd" type="modules_media/media" cascade-delete="true" />
+		<add name="copyright" type="LongString" localized="true" />
+		<add name="startpublicationdate" localized="true" />
+		<add name="endpublicationdate" localized="true" />
+		<add name="publicationstatus" localized="true" />
+	</properties>
+	<statuses default="DRAFT" />
+</document>

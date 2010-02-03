@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<localization>
+  <entity id="document-name">
+    <locale lang="fr">photo</locale>
+    <locale lang="en">photo</locale>
+    <locale lang="de">Foto</locale>
+  </entity>
+  <entity id="label">
+    <locale lang="fr">libellé de la photo</locale>
+    <locale lang="en">photo label</locale>
+    <locale lang="de">Fotoname</locale>
+  </entity>
+  <entity id="label-help">
+    <locale lang="fr">libellé de la photo</locale>
+    <locale lang="en">photo label</locale>
+    <locale lang="de">Fotoname</locale>
+  </entity>
+  <entity id="summary">
+    <locale lang="fr">description</locale>
+    <locale lang="en">summary</locale>
+    <locale lang="de">Beschreibung</locale>
+  </entity>
+  <entity id="summary-help">
+    <locale lang="fr">description de la photo</locale>
+    <locale lang="de">Fotobeschreibung</locale>
+  </entity>
+  <entity id="media">
+    <locale lang="fr">image</locale>
+    <locale lang="de">Bild</locale>
+  </entity>
+  <entity id="media-help">
+    <locale lang="fr">image de la photo</locale>
+    <locale lang="de">Fotobild</locale>
+  </entity>
+  <entity id="thumbnail">
+    <locale lang="fr">miniature</locale>
+    <locale lang="en">thumbnail</locale>
+    <locale lang="de">Miniatur</locale>
+  </entity>
+  <entity id="thumbnail-help">
+    <locale lang="fr">miniature de la photo utilisée pour les apercus</locale>
+    <locale lang="en">thumbnail-help</locale>
+    <locale lang="de">Fotominiatur für die Vorschau</locale>
+  </entity>
+  <entity id="mediahd">
+    <locale lang="fr">image haute définition</locale>
+    <locale lang="de">Bild mit hoher Auflösung</locale>
+  </entity>
+  <entity id="mediahd-help">
+    <locale lang="fr">image haute définition de la photo pour impression, fond d'écran ...</locale>
+    <locale lang="de">Bild mit hoher Auflösung des Fotos zum drucken, als Hintergrundbild ...</locale>
+  </entity>
+  <entity id="copyright">
+    <locale lang="fr">copyright</locale>
+    <locale lang="de">Copyright</locale>
+  </entity>
+  <entity id="copyright-help">
+    <locale lang="fr">copyright de la photo</locale>
+    <locale lang="de">Copyright des Fotos</locale>
+  </entity>
+  <entity id="startpublicationdate">
+    <locale lang="fr">début</locale>
+    <locale lang="en">start</locale>
+    <locale lang="de">Start</locale>
+  </entity>
+  <entity id="startpublicationdate-help">
+    <locale lang="fr">
+			La date de début de publication indique la date à partir de
+			laquelle la photo pourra être consultée par les internautes.
+			Avant cette date, la photo ne sera pas consultable.
+		</locale>
+    <locale lang="de">Das Anfangsdatum der Veröffentlichung gibt an ab welchem Datum das Foto von den Benutzern angezeigt werden kann.
+		Vor diesem Datum wird das Foto nicht angezeigt.</locale>
+  </entity>
+  <entity id="endpublicationdate">
+    <locale lang="fr">fin</locale>
+    <locale lang="en">end</locale>
+    <locale lang="de">Ende</locale>
+  </entity>
+  <entity id="endpublicationdate-help">
+    <locale lang="fr">
+			La date de fin de publication indique la date jusqu'à
+			laquelle la photo pourra être consultée par les internautes.
+			Après cette date, la photo ne sera plus consultable.
+		</locale>
+    <locale lang="de">Das Enddatum der Veröffentlichung gibt an bis zu welchem Datum das Foto von den Benutzern angezeigt werden kann.
+		Nach diesem Datum wird das Foto nicht mehr angezeigt.</locale>
+  </entity>
+</localization>

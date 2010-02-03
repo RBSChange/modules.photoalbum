@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <binding fileName="modules/useractionlogger/persistentdocument/import/useractionlogger_binding.xml"/>
+  <actiondef modulename="photoalbum" actionname="savepermissions.rootfolder" label="modules.photoalbum.bo.useractionlogger.savepermissions-rootfolder"/>
+  <actiondef modulename="photoalbum" actionname="savepermissions.topic" label="modules.photoalbum.bo.useractionlogger.savepermissions-topic"/>
+  <actiondef modulename="photoalbum" actionname="move.topic" label="modules.photoalbum.bo.useractionlogger.move-topic"/>
+  <actiondef modulename="photoalbum" actionname="remove.topic" label="modules.photoalbum.bo.useractionlogger.remove-topic"/>
+  <actiondef modulename="photoalbum" actionname="deactivated.photo" label="modules.photoalbum.bo.useractionlogger.deactivated-photo"/>
+  <actiondef modulename="photoalbum" actionname="reactivate.photo" label="modules.photoalbum.bo.useractionlogger.reactivate-photo"/>
+  <actiondef modulename="photoalbum" actionname="move.photo" label="modules.photoalbum.bo.useractionlogger.move-photo"/>
+  <actiondef modulename="photoalbum" actionname="insert.photo" label="modules.photoalbum.bo.useractionlogger.insert-photo"/>
+  <actiondef modulename="photoalbum" actionname="activate.photo" label="modules.photoalbum.bo.useractionlogger.activate-photo"/>
+  <actiondef modulename="photoalbum" actionname="insert.album" label="modules.photoalbum.bo.useractionlogger.insert-album"/>
+  <actiondef modulename="photoalbum" actionname="activate.album" label="modules.photoalbum.bo.useractionlogger.activate-album"/>
+  <actiondef modulename="photoalbum" actionname="updatetranslation.photo" label="modules.photoalbum.bo.useractionlogger.updatetranslation-photo"/>
+  <actiondef modulename="photoalbum" actionname="updatetranslation.album" label="modules.photoalbum.bo.useractionlogger.updatetranslation-album"/>
+  <actiondef modulename="photoalbum" actionname="deactivated.album" label="modules.photoalbum.bo.useractionlogger.deactivated-album"/>
+  <actiondef modulename="photoalbum" actionname="reactivate.album" label="modules.photoalbum.bo.useractionlogger.reactivate-album"/>
+  <actiondef modulename="photoalbum" actionname="savepermissions.album" label="modules.photoalbum.bo.useractionlogger.savepermissions-album"/>
+</script>

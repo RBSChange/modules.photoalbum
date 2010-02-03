@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<blocks>
+	<block type="modules_photoalbum_albumcontextuallist" display="" icon="list-block" label="&amp;modules.photoalbum.bo.blocks.AlbumcontextualList;"
+		editable="true">
+		<parameters>
+			<parameter name="printcontainer" type="Boolean" default-value="false" />
+		</parameters>
+	</block>
+	<block type="modules_photoalbum_album" display="" icon="photoalbum" label="&amp;modules.photoalbum.bo.blocks.Album;"
+		editable="true">
+		<parameters>
+			<parameter name="defaultcmpref" type="modules_photoalbum/album" min-occurs="0" max-occurs="1" />
+			<parameter name="defaultmode" type="String" default-value="standard" min-occurs="1" max-occurs="1" list-id="modules_photoalbum/defaultmode" />
+			<parameter name="usediaporama" type="Boolean" default-value="true" />
+			<parameter name="diaporamaincludestext" type="Boolean" default-value="true" />
+			<parameter name="photoinselector" type="Integer" default-value="10" />
+		</parameters>
+	</block>
+</blocks>

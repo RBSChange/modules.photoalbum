@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scripts>
+	<script name="modules.photoalbum.lib.js.jquery-cycle-all">
+		<dependencies>
+			<dependency name="modules.website.lib.js.jquery" />
+		</dependencies>
+	</script>
+</scripts>

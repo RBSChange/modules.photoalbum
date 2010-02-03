@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rights>
+	<actions>
+		<document name="rootfolder" />
+		<document name="topic" />
+		<document name="album" />
+		<document name="photo" />
+	</actions>
+	<roles>	
+		<role name="Admin">
+			<permission name="*" />
+			<permission name="LoadPermissions.*" />
+			<permission name="SavePermissions.*" />
+			<permission name="GetPreferencesDocument" />
+			<permission name="EditLocale" />
+			<permission name="Update.rootfolder" />
+		</role>		
+		<role name="Writer" extend="Guest">
+			<permission name="Order" />
+			<permission name="LoadTags" />
+			<permission name="Move.*" />
+			<permission name="Load.*" />
+			<permission name="Rename.*" />
+			<permission name="PutInTrash.*" />
+			<permission name="Delete.*" />
+			<permission name="Insert.*" />
+			<permission name="Update.album" />
+			<permission name="Update.photo" />
+		</role>		
+		<role name="Translator" extend="Guest">
+			<permission name="Load.*" />
+			<permission name="LoadForTranslation.*" />
+			<permission name="UpdateTranslation.*" />
+		</role>		
+		<role name="Validator" extend="Guest">
+			<permission name="Load.*" />
+			<permission name="Activate.album" />
+			<permission name="Activate.photo" />
+			<permission name="Cancel.album" />
+			<permission name="Cancel.photo" />
+			<permission name="Deactivated.photo" />	
+			<permission name="Deactivated.album" />
+			<permission name="ReActivate.photo" />
+			<permission name="ReActivate.album" />
+		</role>
+		<role name="Guest" extend="User">
+			<permission name="Enabled" />
+		</role>		
+		<role name="User">
+			<permission name="List.*" />
+		</role>
+	</roles>
+</rights>

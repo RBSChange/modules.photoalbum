@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<binding fileName="modules/media/persistentdocument/import/media_binding.xml" />
+	<binding fileName="modules/photoalbum/persistentdocument/import/photoalbum_binding.xml" />
+	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
+
+
+	<website byTag="default_modules_website_default-website" template="tplTwo">
+		<topic label="Galerie de photos" id="gallery">
+			<page label="Liste des albums" isIndexPage="true">
+				<tag name="functional_photoalbum_album-list" />
+				<changecontent for="content-block">
+					<changeblock type="modules_photoalbum_albumcontextuallist" />
+				</changecontent>
+			</page>
+
+			<page label="Album" navigationVisibility="hidden">
+				<tag name="functional_photoalbum_album-detail" />
+				<changecontent for="content-block">
+					<changeblock type="modules_photoalbum_album" />
+				</changecontent>
+			</page>
+		</topic>
+	</website>
+
+	<rootfolder module="media">
+		<folder label="Exemple de media Photothèque">
+			<media
+				path="modules/photoalbum/setup/sample/Deux jours à tuer.jpg"
+				label="Deux jours à tuer" id="photo1" />
+			<media
+				path="modules/photoalbum/setup/sample/Albert Dupontel.jpg"
+				label="Albert Dupontel" id="photo2" />
+			<media
+				path="modules/photoalbum/setup/sample/Albert Dupontel 2.jpg"
+				label="Albert Dupontel 2" id="photo3" />
+			<media
+				path="modules/photoalbum/setup/sample/Albert Dupontel 3.jpg"
+				label="Albert Dupontel 3" id="photo4" />
+			<media
+				path="modules/photoalbum/setup/sample/Albert Dupontel et Jean Becker (réalisateur).jpg"
+				label="Albert Dupontel et Jean Becker" id="photo5" />
+			<media
+				path="modules/photoalbum/setup/sample/Albert Dupontel et Jean Becker (réalisateur) 2.jpg"
+				label="Albert Dupontel et Jean Becker 2" id="photo6" />
+			<media
+				path="modules/photoalbum/setup/sample/Albert Dupontel et Jean Becker (réalisateur) 3.jpg"
+				label="Albert Dupontel et Jean Becker 3" id="photo7" />
+			<media
+				path="modules/photoalbum/setup/sample/Albert Dupontel et Marie-Josée Croze.jpg"
+				label="Albert Dupontel et Marie-Josée Croze" id="photo8" />
+			<media
+				path="modules/photoalbum/setup/sample/Albert Dupontel et Marie-Josée Croze 2.jpg"
+				label="Albert Dupontel et Marie-Josée Croze 2" id="photo9" />
+			<media
+				path="modules/photoalbum/setup/sample/Jean Becker.jpg"
+				label="Jean Becker" id="photo10" />
+			<media
+				path="modules/photoalbum/setup/sample/Jean Becker (réalisateur).jpg"
+				label="Jean Becker 2" id="photo11" />
+			<media
+				path="modules/photoalbum/setup/sample/Marie-Josée Croze et Albert Dupontel.jpg"
+				label="Albert Dupontel et Marie-Josée Croze 3" id="photo12" />
+			<media
+				path="modules/photoalbum/setup/sample/Mathias Mlekuz, Albert Dupontel, Cristiana Reali et Francois Marthouret.jpg"
+				label="Mathias Mlekuz, Albert Dupontel ..." id="photo13" />
+			<media
+				path="modules/photoalbum/setup/sample/Pierre Vaneck et Albert Dupontel.jpg"
+				label="Pierre Vaneck et Albert Dupontel" id="photo14" />
+		</folder>
+	</rootfolder>
+
+	<rootfolder module="photoalbum">
+		<linkedtopic refid="gallery">
+			<album label="Deux jours à tuer"
+				summary="Antoine Méliot, la quarantaine, a tout pour être heureux : une belle épouse, deux enfants adorables, des amis sur lesquels il peut compter à tout instant, une jolie demeure dans les Yvelines et de l'argent. Mais un jour, il décide de tout saboter en un week-end : son bonheur, sa famille, ses amis. Que s'est-il passé chez cet homme pour qu'il change si étrangement de comportement ?">
+				<photo label="Deux jours à tuer" mediarefid="photo1"
+					summary="Antoine Méliot, la quarantaine, a tout pour être heureux"
+					copyright="Canal plus" />
+				<photo label="Albert Dupontel" mediarefid="photo2"
+					summary="Albert Dupontel" copyright="Canal plus" />
+				<photo label="Albert Dupontel 2" mediarefid="photo3"
+					summary="Albert Dupontel" copyright="Canal plus" />
+				<photo label="Albert Dupontel 3" mediarefid="photo4"
+					summary="Albert Dupontel" copyright="Canal plus" />
+				<photo
+					label="Albert Dupontel et Jean Becker (réalisateur)"
+					mediarefid="photo5" summary="Albert Dupontel et Jean Becker"
+					copyright="Canal plus" />
+				<photo
+					label="Albert Dupontel et Jean Becker (réalisateur) 2"
+					mediarefid="photo6" summary="Albert Dupontel et Jean Becker"
+					copyright="Canal plus" />
+				<photo
+					label="Albert Dupontel et Jean Becker (réalisateur) 3"
+					mediarefid="photo7" summary="Albert Dupontel et Jean Becker"
+					copyright="Canal plus" />
+				<photo label="Albert Dupontel et Marie-Josée Croze"
+					mediarefid="photo8" summary="Albert Dupontel et Marie-Josée Croze"
+					copyright="Canal plus" />
+				<photo label="Albert Dupontel et Marie-Josée Croze 2"
+					mediarefid="photo9" summary="Albert Dupontel et Marie-Josée Croze"
+					copyright="Canal plus" />
+				<photo label="Jean Becker" mediarefid="photo10"
+					summary="Jean Becker" copyright="Canal plus" />
+				<photo label="Jean Becker (réalisateur)"
+					mediarefid="photo11" summary="Jean Becker" copyright="Canal plus" />
+				<photo label="Marie-Josée Croze et Albert Dupontel"
+					mediarefid="photo12" summary="Albert Dupontel et Marie-Josée Croze"
+					copyright="Canal plus" />
+				<photo
+					label="Mathias Mlekuz, Albert Dupontel, Cristiana Reali et Francois Marthouret"
+					mediarefid="photo13"
+					summary="Mathias Mlekuz, Albert Dupontel, Cristiana Reali et Francois Marthouret"
+					copyright="Canal plus" />
+				<photo label="Pierre Vaneck et Albert Dupontel"
+					mediarefid="photo14" summary="Pierre Vaneck et Albert Dupontel"
+					copyright="Canal plus" />
+			</album>
+		</linkedtopic>
+	</rootfolder>
+</script>

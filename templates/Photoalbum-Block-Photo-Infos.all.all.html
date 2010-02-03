@@ -1,0 +1,19 @@
+<tal:block tal:define="photo album/getCurrentPhoto">
+<img change:media="document photo/getMedia; format 'modules.photoalbum.frontoffice/photopreview'; zoom 'true'; id 'previewPhoto'" />
+<h4 change:h="">${photo/getLabel} <a change:edit="document photo"/></h4>
+<p class="normal" tal:content="photo/getSummaryAsHtml">description de la photo, lorem ipsum dolor sit amet</p>
+<p class="normal" tal:condition="photo/getMediahd"><span i18n:translate="&modules.photoalbum.frontoffice.DownloadHDLabel;">Version HD</span>
+<a change:download="document photo/getMediahd"/></p>
+<p class="normal" tal:condition="photo/getCopyright"><span i18n:translate="&modules.photoalbum.frontoffice.CopyrightLabel;" tal:omit-tag="">Copyright</span>
+<span tal:replace="photo/getCopyright">RBS</span></p>
+<ul id="photoalbum_infocontrol" tal:attributes="change:currentpageindex album/getCurrentPageIndex; change:pagesize album/getPageSize; change:albumid album/getId">
+	<li class="previous"><a class="link" id="photoinfocontrolprevious" tal:condition="album/getPreviousPhoto" 
+	change:link="document album;photoalbumParam[currentphoto] album/getPreviousPhoto/getId"
+	tal:attributes="change:previewsrc album/getPreviousPhoto/getPreviewUrl; change:photoid album/getPreviousPhoto/getId; title album/getPreviousPhoto/getLabel; change:pageindex album/getPreviousPhotoPageIndex; change:mediaId album/getPreviousPhoto/getMedia/getId">
+  		<img change:icon="control-backward/small" alt=""/> <span i18n:translate="&modules.photoalbum.frontoffice.Diapoprevious;">Précédent</span></a></li>
+	<li class="next"><a class="link" id="photoinfocontrolnext" tal:condition="album/getNextPhoto" 
+	change:link="document album;photoalbumParam[currentphoto] album/getNextPhoto/getId"
+	tal:attributes="change:previewsrc album/getNextPhoto/getPreviewUrl; change:photoid album/getNextPhoto/getId; title album/getNextPhoto/getLabel;change:pageindex album/getNextPhotoPageIndex; change:mediaId album/getNextPhoto/getMedia/getId">
+		<img change:icon="control-forward/small" alt=""/> <span i18n:translate="&modules.photoalbum.frontoffice.Diaponext;">Suivant</span></a></li>
+</ul>
+</tal:block>

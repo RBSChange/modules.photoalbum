@@ -1,0 +1,11 @@
+<tal:block tal:define="global previousTitle" change:translate="&modules.photoalbum.frontoffice.Diapoprevious;" />
+<a tal:condition="item/hasPagePreviousSelector" id="previousselector" class="link previous" change:link="document item; photoalbumParam[currentpageindex] item/getPagePreviousSelector" tal:attributes="change:pageindex item/getPagePreviousSelector; title previousTitle">
+  <img change:icon="control-backward/small" i18n:attributes="alt &modules.photoalbum.frontoffice.Diapoprevious;"/>
+</a>
+	<ol>
+		<li tal:repeat="photo item/getPhotosSelector"><a class="photoselector" change:link="document item;photoalbumParam[currentphoto] photo/getId"
+		tal:attributes="change:previewsrc photo/getPreviewUrl;change:photoid photo/getId;title photo/getLabel; change:mediaId photo/getMedia/getId"><img tal:attributes="src photo/getSelectorUrl;alt photo/getLabel;"/></a></li>
+	</ol>
+<tal:block tal:define="global nextTitle" change:translate="&modules.photoalbum.frontoffice.Diaponext;" />
+<a tal:condition="item/hasPageNextSelector" id="nextselector" class="link next" change:link="document item;photoalbumParam[currentpageindex] item/getPageNextSelector"
+	tal:attributes="change:pageindex item/getPageNextSelector; title nextTitle"><img change:icon="control-forward/small" i18n:attributes="alt &modules.photoalbum.frontoffice.Diaponext;"/></a>

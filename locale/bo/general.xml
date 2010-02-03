@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<localization>
+  <entity id="generalities">
+    <locale lang="fr">propriétés principales</locale>
+    <locale lang="en">main data</locale>
+    <locale lang="de">Haupteigenschaften</locale>
+  </entity>
+  <entity id="publication">
+    <locale lang="fr">publication</locale>
+    <locale lang="en">publication</locale>
+    <locale lang="de">Veröffentlichung</locale>
+  </entity>
+  <entity id="visual">
+    <locale lang="fr">visuel</locale>
+    <locale lang="en">visual</locale>
+    <locale lang="de">Bild</locale>
+  </entity>
+  <entity id="module-name">
+    <locale lang="fr">Galerie de photos</locale>
+    <locale lang="en">Photo album</locale>
+    <locale lang="de">Fotogallerie</locale>
+  </entity>
+  <entity id="tree-root-name">
+    <locale lang="fr">Galerie de photos</locale>
+    <locale lang="en">Photo album</locale>
+    <locale lang="de">Fotogallerie</locale>
+  </entity>
+  <entity id="system-folder-name">
+    <locale lang="fr">Galerie de photos</locale>
+    <locale lang="en">Photo album</locale>
+    <locale lang="de">Fotogallerie</locale>
+  </entity>
+  <entity id="format.Albumthumbnail">
+    <locale lang="fr">Vignette de l'album</locale>
+    <locale lang="fr">Album thumbnail</locale>
+    <locale lang="de">Albumvignette</locale>
+  </entity>
+  <entity id="format.Photoselector">
+    <locale lang="fr">Vignette de selection d'une photo</locale>
+    <locale lang="fr">Picture selector</locale>
+    <locale lang="de">Selektionsvignette eines Fotos</locale>
+  </entity>
+  <entity id="column.pathOf">
+    <locale lang="fr">chemin</locale>
+    <locale lang="en">path</locale>
+  </entity>
+</localization>

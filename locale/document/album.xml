@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<localization>
+  <entity id="document-name">
+    <locale lang="fr">album</locale>
+    <locale lang="en">album</locale>
+    <locale lang="de">Album</locale>
+  </entity>
+  <entity id="label">
+    <locale lang="fr">libellé de l'album</locale>
+    <locale lang="en">album label</locale>
+    <locale lang="de">Albumname</locale>
+  </entity>
+  <entity id="label-help">
+    <locale lang="fr">libellé de l'album</locale>
+    <locale lang="en">titre de l'album</locale>
+    <locale lang="de">Albumname</locale>
+  </entity>
+  <entity id="summary">
+    <locale lang="fr">description</locale>
+    <locale lang="en">summary</locale>
+    <locale lang="de">Beschreibung</locale>
+  </entity>
+  <entity id="summary-help">
+    <locale lang="fr">description de l'album</locale>
+    <locale lang="de">Albumbeschreibung</locale>
+  </entity>
+  <entity id="startpublicationdate">
+    <locale lang="fr">début</locale>
+    <locale lang="en">start</locale>
+    <locale lang="de">Start</locale>
+  </entity>
+  <entity id="startpublicationdate-help">
+    <locale lang="fr">
+			La date de début de publication indique la date à partir de
+			laquelle l'album pourra être consulté par les internautes.
+			Avant cette date, l'album ne sera pas consultable.
+		</locale>
+    <locale lang="de">Das Anfangsdatum der Veröffentlichung bestimmt ab welchem Datum das Album von den Benutzern genutzt werden kann.
+		Vor diesem Datum kann das Album nicht genutzt werden.</locale>
+  </entity>
+  <entity id="endpublicationdate">
+    <locale lang="fr">fin</locale>
+    <locale lang="en">end</locale>
+    <locale lang="de">Ende</locale>
+  </entity>
+  <entity id="endpublicationdate-help">
+    <locale lang="fr">
+			La date de fin de publication indique la date jusqu'à
+			laquelle l'album pourra être consulté par les internautes.
+			Après cette date, l'album ne sera plus consultable.
+		</locale>
+    <locale lang="de">Das Enddatum der Veröffentlichung bestimmt bis zu welchem Datum das Album von den Benutzern genutzt werden kann.
+		Nach diesem Datum kann das Album nicht mehr genutzt werden.</locale>
+  </entity>
+</localization>

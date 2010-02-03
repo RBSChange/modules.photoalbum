@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://www.rbs.fr/schema/change-document/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.rbs.fr/schema/change-document/1.0 http://www.rbschange.fr/static/schema/change-document/1.0.xsd"
+	model-version="1.0" icon="photoalbum" indexable="true" publish-on-day-change="true">
+	<properties>
+		<add name="summary" type="LongString" localized="true" />
+		<add name="startpublicationdate" localized="true" />
+		<add name="endpublicationdate" localized="true" />
+		<add name="publicationstatus" localized="true" />
+	</properties>
+	<statuses default="DRAFT" />
+	<children>
+		<child name="photos" type="modules_photoalbum/photo" />
+	</children>
+</document>
