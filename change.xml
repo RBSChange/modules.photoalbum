@@ -4,25 +4,28 @@
 	<type>change-module</type>
 	<license>os</license>
 	<repository>public</repository>
-	<version>3.0.0</version>
+	<version>3.0.1</version>
 	<description>Galerie de photos</description>
 	<dependencies>
 		<dependency>
 			<name>change-lib/framework</name>
 			<versions>
 				<version>3.0.0</version>
+				<version>3.0.1</version>
 			</versions>
 		</dependency>
 		<dependency>
 			<name>change-module/generic</name>
 			<versions>
 				<version>3.0.0</version>
+				<version>3.0.1</version>
 			</versions>
 		</dependency>
 		<dependency>
 			<name>change-module/website</name>
 			<versions>
 				<version>3.0.0</version>
+				<version>3.0.1</version>
 			</versions>
 		</dependency>
 	</dependencies>
