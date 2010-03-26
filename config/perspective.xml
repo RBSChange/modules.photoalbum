@@ -82,6 +82,7 @@
 			<contextactions>
 				<contextaction name="edit" />
 				<contextaction name="delete" />
+				<contextaction name="activate" />
 				<contextaction name="deactivated" />
 				<contextaction name="reactivate" />
 			</contextactions>
