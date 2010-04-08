@@ -8,27 +8,27 @@ ol.photoalbum h4{
 	height: 68px;
 }
 #diaporamaprev{
-	background: url(/icons/small/control-backward.png) center left no-repeat;
+	background: url(/changeicons/small/control-backward.png) center left no-repeat;
 	padding-left: 18px;
 	margin-left: 10px;
 }
 #diaporamapause{
-	background: url(/icons/small/control-pause.png) center left no-repeat;
+	background: url(/changeicons/small/control-pause.png) center left no-repeat;
 	padding-left: 18px;
 	margin-left: 10px;
 }
 #diaporamaresume{
-	background: url(/icons/small/control-start.png) center left no-repeat;
+	background: url(/changeicons/small/control-start.png) center left no-repeat;
 	padding-left: 18px;
 	margin-left: 10px;
 }
 #diaporamaexit{
-	background: url(/icons/small/control-stop.png) center left no-repeat;
+	background: url(/changeicons/small/control-stop.png) center left no-repeat;
 	padding-left: 18px;
 	margin-left: 10px;
 }
 #diaporamanext{
-	background: url(/icons/small/control-forward.png) center left no-repeat;
+	background: url(/changeicons/small/control-forward.png) center left no-repeat;
 	padding-left: 18px;
 	margin-left: 10px;
 }
