@@ -22,8 +22,8 @@
 </div>
 <script type="text/javascript">
 <!--
-$(document).ready(function() {
-	$('#photozone').cycle({ 
+jQuery(document).ready(function() {
+	jQuery('#photozone').cycle({ 
 	    fx:      'fade', 
 	    timeout: 3000,
 	    next:   '#diaporamaprev', 
@@ -31,24 +31,24 @@ $(document).ready(function() {
 	    prevNextClick: stopAnimation
 	});
 
-	$('#diaporamapause').bind('click', function(){
-		$('#photozone').cycle('pause');
-		$('#diaporamapause').css('display', 'none');
-		$('#diaporamaresume').css('display', 'inline');
+	jQuery('#diaporamapause').bind('click', function(){
+		jQuery('#photozone').cycle('pause');
+		jQuery('#diaporamapause').css('display', 'none');
+		jQuery('#diaporamaresume').css('display', 'inline');
 	}).css('display', 'inline');
 	
-	$('#diaporamaresume').bind('click', function(){
-		$('#photozone').cycle('resume');
-		$('#diaporamapause').css('display', 'inline');
-		$('#diaporamaresume').css('display', 'none');
+	jQuery('#diaporamaresume').bind('click', function(){
+		jQuery('#photozone').cycle('resume');
+		jQuery('#diaporamapause').css('display', 'inline');
+		jQuery('#diaporamaresume').css('display', 'none');
 	}).css('display', 'none');
 });
 
 function stopAnimation(isNext, zeroBasedSlideIndex, slideElement)
 {
-	$('#photozone').cycle('pause');
-	$('#diaporamapause').css('display', 'none');
-	$('#diaporamaresume').css('display', 'inline');
+	jQuery('#photozone').cycle('pause');
+	jQuery('#diaporamapause').css('display', 'none');
+	jQuery('#diaporamaresume').css('display', 'inline');
 }
 //-->
 </script>

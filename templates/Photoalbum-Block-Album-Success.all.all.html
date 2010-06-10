@@ -31,19 +31,19 @@
 <!--
 var PhotoAlbum = {
 	onSelectorClick : function(e) {
-    		var pageindex = $(this).attr('change:pageindex');
+    		var pageindex = jQuery(this).attr('change:pageindex');
     		var lang = pageHandler.lang;
     		PhotoAlbum.loadSelector(PhotoAlbum.albumid, pageindex, PhotoAlbum.pageSize, lang);
     		return false;
     	},
     	
     loadSelector : function(albumid, pageindex, pagesize, lang) {
-    	$('#selectorcontainer').load('/index.php', {currentpageindex: pageindex, pagesize: pagesize, module: 'photoalbum', action: 'Selector', cmpref: albumid, lang: lang}, PhotoAlbum.bindSelector);
+    	jQuery('#selectorcontainer').load('/index.php', {currentpageindex: pageindex, pagesize: pagesize, module: 'photoalbum', action: 'Selector', cmpref: albumid, lang: lang}, PhotoAlbum.bindSelector);
     	return false;
     },
     	
 	onSelectorImgClick : function(e) {
-			var elem = $(this);
+			var elem = jQuery(this);
 			var newPageIndex = elem.attr('change:pageindex');
 			if (newPageIndex != null && newPageIndex != PhotoAlbum.currentPageIndex)
 			{
@@ -51,7 +51,7 @@ var PhotoAlbum = {
 			}
 			
 			var photoid = elem.attr('change:photoid'); 
-			var previewInfos = $('#previewinfos');
+			var previewInfos = jQuery('#previewinfos');
 			previewInfos.css("width", previewInfos.width()+"px");
 			previewInfos.css("height", previewInfos.height()+"px");
   			previewInfos.load('/index.php', {module: 'photoalbum', action: 'PhotoInfos', cmpref: photoid, lang: pageHandler.lang, pagesize: PhotoAlbum.pageSize, currentPageId : pageHandler.id, currentURL : window.location}, PhotoAlbum.bindPreview);
@@ -60,13 +60,13 @@ var PhotoAlbum = {
   		},
   
   	bindSelector: function() {
-		$('a.photoselector').each(function(index, domElement) 
+		jQuery('a.photoselector').each(function(index, domElement) 
     	{
-			$(domElement).attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
+			jQuery(domElement).attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
 		})
 
-		$('#previousselector').attr('href', 'javascript:;').bind('click', PhotoAlbum.onSelectorClick);  
-		$('#nextselector').attr('href', 'javascript:;').bind('click', PhotoAlbum.onSelectorClick);
+		jQuery('#previousselector').attr('href', 'javascript:;').bind('click', PhotoAlbum.onSelectorClick);  
+		jQuery('#nextselector').attr('href', 'javascript:;').bind('click', PhotoAlbum.onSelectorClick);
 		return false;
   	},
   	
@@ -75,27 +75,27 @@ var PhotoAlbum = {
   	},
 
 	bindPreview: function() {
-		$('#previewPhoto').load(function () {
-			var previewInfosData = $('#previewinfosdata');
-			var previewInfos = $('#previewinfos');
+		jQuery('#previewPhoto').load(function () {
+			var previewInfosData = jQuery('#previewinfosdata');
+			var previewInfos = jQuery('#previewinfos');
 			previewInfos.css("width", previewInfosData.width());
 			previewInfos.css("height", previewInfosData.height());
 		});
-		var photoInfoControl = $('#photoalbum_infocontrol');
+		var photoInfoControl = jQuery('#photoalbum_infocontrol');
 		PhotoAlbum.currentPageIndex = photoInfoControl.attr('change:currentpageindex');
 		PhotoAlbum.pageSize = photoInfoControl.attr('change:pagesize');
 		PhotoAlbum.albumid = photoInfoControl.attr('change:albumid');
-		$('#photoinfocontrolprevious').attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
-		$('#photoinfocontrolnext').attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
-		$('#previewinfos a.lightbox').fancybox();
+		jQuery('#photoinfocontrolprevious').attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
+		jQuery('#photoinfocontrolnext').attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
+		jQuery('#previewinfos a.lightbox').fancybox();
 		
   		return false;
   	}
 };
 
-$(document).ready(function() 
+jQuery(document).ready(function() 
 {
-	$("#diaporamalink").css("visibility", "visible");
+	jQuery("#diaporamalink").css("visibility", "visible");
     PhotoAlbum.bindSelector();
     PhotoAlbum.bindPreview();
 });
