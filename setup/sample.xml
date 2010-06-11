@@ -4,7 +4,7 @@
 	<binding fileName="modules/photoalbum/persistentdocument/import/photoalbum_binding.xml" />
 	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
 
-	<website byTag="default_modules_website_default-website" template="tplTwo">
+	<website byTag="default_modules_website_default-website" template="webfactory/tplTwo">
 		<topic label="Galerie de photos" id="gallery">
 			<page label="Liste des albums" isIndexPage="true">
 				<tag name="functional_photoalbum_album-list" />
