@@ -16,12 +16,11 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 		$album = $this->getDocumentParameter(K::COMPONENT_ID_ACCESSOR, "photoalbum_persistentdocument_album");
 		if ($album === null)
 		{
-			$defaultalbumid = $configuration->getDefaultcmpref();
-			if ($defaultalbumid === null)
+			$album = $configuration->getDefaultcmpref();
+			if ($album === null)
 			{
 				return block_BlockView::DUMMY;
 			}
-			$album = DocumentHelper::getDocumentInstance($defaultalbumid);
 		}
 
 		$request->setAttribute('item', $album);
