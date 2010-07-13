@@ -126,7 +126,11 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 	public function getCurrentPhoto()
 	{
 		$photos = $this->getPublishedPhotos();
-		return $photos[$this->currentphotoIndex];
+		if (array_key_exists($this->currentphotoIndex, $photos))
+		{
+			return $photos[$this->currentphotoIndex];
+		}
+		return null;
 	}
 
 	/**
