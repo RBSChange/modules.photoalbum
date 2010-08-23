@@ -54,7 +54,7 @@ var PhotoAlbum = {
 			var previewInfos = jQuery('#previewinfos');
 			previewInfos.css("width", previewInfos.width()+"px");
 			previewInfos.css("height", previewInfos.height()+"px");
-  			previewInfos.load('/index.php', {module: 'photoalbum', action: 'PhotoInfos', cmpref: photoid, lang: pageHandler.lang, pagesize: PhotoAlbum.pageSize, currentPageId : pageHandler.id, currentURL : window.location}, PhotoAlbum.bindPreview);
+  			previewInfos.load('/index.php', {module: 'photoalbum', action: 'PhotoInfos', cmpref: photoid, lang: pageHandler.lang, pagesize: PhotoAlbum.pageSize, currentPageId : pageHandler.id, currentURL : window.location.toString()}, PhotoAlbum.bindPreview);
   			
   			return false;
   		},
