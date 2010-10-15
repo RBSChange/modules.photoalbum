@@ -71,22 +71,6 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 			{
 				$album->setCurrentPhotoId($currentphotoId);
 			}
-			elseif (DocumentHelper::equals($currentPhoto->getAlbum(), $album))
-			{
-				$user = users_UserService::getInstance()->getCurrentBackEndUser();
-				if ($user !== null)
-				{
-					$permissionService = f_permission_PermissionService::getInstance();
-					if ($permissionService->hasPermission($user, "modules_photoalbum.Insert.photo", $album->getId()))
-					{
-						$request->setAttribute("unpublishedPhoto", $currentPhoto);
-					}
-				}
-			}
-			else
-			{
-				throw new Exception("Bad argument");
-			}
 		}
 		else
 		{

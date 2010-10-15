@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <localization>
-  <entity id="diaporama-view">
-    <locale lang="fr">afficher le diaporama</locale>
-    <locale lang="en">show diaporama</locale>
-    <locale lang="de">Diashow anzeigen</locale>
-  </entity>
-  <entity id="previous">
-    <locale lang="fr">&lt;&lt;</locale>
+	<entity id="diaporama-view">
+		<locale lang="fr">afficher le diaporama</locale>
+		<locale lang="en">show diaporama</locale>
+		<locale lang="de">Diashow anzeigen</locale>
+	</entity>
+	<entity id="previous">
+		<locale lang="fr">&lt;&lt;</locale>
     <locale lang="en">&lt;&lt;</locale>
     <locale lang="de">&lt;&lt;</locale>
   </entity>
@@ -65,5 +65,8 @@
   <entity id="create-and-activate-at-least-one-photo-in-album">
     <locale lang="fr">Créez et activez au moins une photo dans l'album.</locale>
     <locale lang="en">Create and activate at least one photo in album</locale>
+  </entity>
+  <entity id="empty-album">
+    <locale lang="fr">Cet album est vide.</locale>
   </entity>
 </localization>

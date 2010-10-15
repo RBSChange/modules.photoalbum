@@ -209,6 +209,10 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 	private function setCurrentPhotoIndex($photoIndex)
 	{
 		$photos = $this->getPublishedPhotos();
+		if ($photoIndex >= count($photos))
+		{
+			return;
+		}
 		$photo = $photos[$photoIndex];
 		$photo->setCurrent();
 		$this->currentphotoIndex = $photoIndex;

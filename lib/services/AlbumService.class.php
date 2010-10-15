@@ -35,25 +35,12 @@ class photoalbum_AlbumService extends f_persistentdocument_DocumentService
 		return $this->pp->createQuery('modules_photoalbum/album');
 	}
 	
+	/**
+	 * @param integer $topicId
+	 * @return photoalbum_persistentdocument_album[]
+	 */
 	public function getPublishedByTopicId($topicId)
 	{
 		return $this->createQuery()->add(Restrictions::published())->add(Restrictions::childOf($topicId))->find();
-	}
-
-	/**
-	 * @param photoalbum_persistentdocument_album $document
-	 * @return boolean true if the document is publishable, false if it is not.
-	 */
-	public function isPublishable($document)
-	{
-		$result = parent::isPublishable($document);
-		if ($result)
-		{
-		    if (count($document->getChildrenPublishedPhotos()) <= 0)
-		    {
-		        return false;
-		    }
-		}
-		return $result;
 	}
 }
