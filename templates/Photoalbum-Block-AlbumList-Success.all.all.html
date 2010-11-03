@@ -1,7 +1,7 @@
 <li>
-  	<a change:link="document item" tal:attributes="title item/getLabel">
+  	<a change:link="document item" tal:attributes="title item/getLabelAsHtml">
   	<img change:media="document item/getThumbnail; class 'float-left'; format 'modules.photoalbum.frontoffice/albumthumbnail'; lang item/getThumbnail/getLang; alt item/getLabel" /></a>
-  	<h4 change:h=""><a change:link="document item" tal:content="item/getLabel"/> <a change:edit="document item" /></h4>
+  	<h4 change:h=""><a change:link="document item" tal:content="item/getLabelAsHtml"></a> <a change:edit="document item"></a></h4>
   	<p tal:condition="item/getSummary" tal:content="item/getSummaryAsHtml"/>
 	<div class="cleaner"></div>
 </li>

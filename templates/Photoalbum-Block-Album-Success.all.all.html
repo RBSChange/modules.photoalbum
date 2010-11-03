@@ -1,20 +1,20 @@
-<h3 change:h="">${item/getLabel} <a change:edit="document item"/></h3>
+<h3 change:h="">${item/getLabelAsHtml} <a change:edit="document item"></a></h3>
 
-<p change:create="" model="photoalbum/photo" parentId="${item/getId}"><tal:block change:translate="&modules.photoalbum.frontoffice.create-new-photo-in-album;; albumLabel item/getLabel">Ajouter une nouvelle photo dans l'album ${item/getLabel}</tal:block></p>
+<p change:create="" model="photoalbum/photo" parentId="${item/getId}"><tal:block change:translate="modules.photoalbum.frontoffice.create-new-photo-in-album; albumLabel item/getLabelAsHtml">Ajouter une nouvelle photo dans l'album ${item/getLabelAsHtml}</tal:block></p>
 
 <tal:block tal:condition="item/getPublishedPhotos/0">
 	<div class="photopreview">
 		<div id="previewinfos">
 			<div id="previewinfodata">
-			<span change:include="module 'photoalbum'; template 'Photoalbum-Block-Photo-Infos'; type 'html'; album item" />
+				<tal:block change:include="module 'photoalbum'; template 'Photoalbum-Block-Photo-Infos'; type 'html'; album item" />
 			</div>
 		</div>
 	</div>
 	
 	<div class="selectorcontainer">
-		<p class="normal" tal:condition="usediaporama"><a id="diaporamalink" change:currentPageLink="diaporamaparams" class="link" style="visibility: hidden;"><img change:icon="projection-screen/small" alt="" /><tal:block change:translate="&modules.photoalbum.frontoffice.Diaporama-view;">Diaporama</tal:block></a></p>
+		<p class="normal" tal:condition="usediaporama"><a id="diaporamalink" change:currentPageLink="diaporamaparams" class="link" style="visibility: hidden;"><img change:img="icon/small/projection-screen.png" alt="" /><tal:block change:translate="modules.photoalbum.frontoffice.Diaporama-view" /></a></p>
 		<div id="selectorcontainer">
-			<span change:include="module 'photoalbum'; template 'Photoalbum-Block-Album-Selector'; type 'html'; item item" />
+			<tal:block change:include="module 'photoalbum'; template 'Photoalbum-Block-Album-Selector'; type 'html'; item item" />
 		</div>
 	</div>
 

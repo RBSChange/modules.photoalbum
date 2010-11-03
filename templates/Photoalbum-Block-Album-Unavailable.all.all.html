@@ -1,9 +1,9 @@
-<h3 change:h="">${item/getLabel} <a change:edit="document item"/></h3>
+<h3 change:h="">${item/getLabelAsHtml} <a change:edit="document item"></a></h3>
 
-<p change:create="" model="photoalbum/photo" parentId="${item/getId}">Ajouter une nouvelle photo dans l'album ${item/getLabel}</p>
+<p change:create="" model="photoalbum/photo" parentId="${item/getId}">Ajouter une nouvelle photo dans l'album ${item/getLabelAsHtml}</p>
 
-<p change:translate="&modules.photoalbum.frontoffice.this-album-is-not-published;">Cet album n'est pas publié.</p>
-<p tal:condition="not: item/getPublishedPhotos" change:translate="&modules.photoalbum.frontoffice.create-and-activate-at-least-one-photo-in-album;">Créez et activez au moins une photo dans l'album.</p>
+<p change:translate="modules.photoalbum.frontoffice.this-album-is-not-published" />
+<p tal:condition="not: item/getPublishedPhotos" change:translate="modules.photoalbum.frontoffice.create-and-activate-at-least-one-photo-in-album" />
 
 <table class="normal" tal:condition="item/getPublishedPhotos">
 	<thead>
@@ -15,12 +15,12 @@
 	</thead>
 	<tbody>
 		<tr tal:repeat="photo item/getPublishedPhotos">
-			<td>${photo/getLabel}</td>
+			<td>${photo/getLabelAsHtml}</td>
 			<td>
 				<img change:media="document photo/getMedia; format 'modules.media.frontoffice/thumbnail'; zoom 'true'" />
 			</td>
 			<td>
-				<a change:edit="document photo"/>
+				<a change:edit="document photo"></a>
 			</td>
 		</tr>
 	</tbody>
