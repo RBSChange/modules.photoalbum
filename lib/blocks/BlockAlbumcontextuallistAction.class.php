@@ -22,7 +22,7 @@ class photoalbum_BlockAlbumcontextuallistAction extends website_BlockAction
 		$nbItemPerPage = 10;
 
 		// Set the paginator
-		$paginator = new paginator_Paginator('photoalbum', $request->getParameter(paginator_Paginator::REQUEST_PARAMETER_NAME, 1), $items, $nbItemPerPage);
+		$paginator = new paginator_Paginator('photoalbum', $request->getParameter(paginator_Paginator::PAGEINDEX_PARAMETER_NAME, 1), $items, $nbItemPerPage);
 		$request->setAttribute('paginator', $paginator);
 
 		return block_BlockView::SUCCESS;
