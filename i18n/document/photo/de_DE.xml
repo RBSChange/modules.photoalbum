@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.document.photo" lcid="de_DE">
+  <key id="document-name">Foto</key>
+  <key id="label">Fotoname</key>
+  <key id="label-help">Fotoname</key>
+  <key id="summary">Beschreibung</key>
+  <key id="summary-help">Fotobeschreibung</key>
+  <key id="media">Bild</key>
+  <key id="media-help">Fotobild</key>
+  <key id="thumbnail">Miniatur</key>
+  <key id="thumbnail-help">Fotominiatur für die Vorschau</key>
+  <key id="mediahd">Bild mit hoher Auflösung</key>
+  <key id="mediahd-help">Bild mit hoher Auflösung des Fotos zum drucken, als Hintergrundbild ...</key>
+  <key id="copyright">Copyright</key>
+  <key id="copyright-help">Copyright des Fotos</key>
+  <key id="startpublicationdate">Start</key>
+  <key id="startpublicationdate-help">Das Anfangsdatum der Veröffentlichung gibt an ab welchem Datum das Foto von den Benutzern angezeigt werden kann.
+		Vor diesem Datum wird das Foto nicht angezeigt.</key>
+  <key id="endpublicationdate">Ende</key>
+  <key id="endpublicationdate-help">Das Enddatum der Veröffentlichung gibt an bis zu welchem Datum das Foto von den Benutzern angezeigt werden kann.
+		Nach diesem Datum wird das Foto nicht mehr angezeigt.</key>
+</i18n>

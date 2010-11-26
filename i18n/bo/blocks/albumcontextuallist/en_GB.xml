@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.bo.blocks.albumcontextuallist" lcid="en_GB">
+  <key id="printcontainer">Display the topic</key>
+  <key id="printcontainer-help">Display the topic's label before the album list</key>
+</i18n>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.bo.general" lcid="en_GB">
+  <key id="generalities">main data</key>
+  <key id="publication">publication</key>
+  <key id="visual">visual</key>
+  <key id="module-name">Photo album</key>
+  <key id="tree-root-name">Photo album</key>
+  <key id="system-folder-name">Photo album</key>
+</i18n>

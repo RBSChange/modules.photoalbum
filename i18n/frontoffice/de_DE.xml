@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.frontoffice" lcid="de_DE">
+  <key id="diaporama-view">Diashow anzeigen</key>
+  <key id="previous">&lt;&lt;</key>
+  <key id="next">&gt;&gt;</key>
+  <key id="diapoprevious">Vorheriges</key>
+  <key id="copyright">Copyright</key>
+  <key id="downloadhd">Version mit hoher Auflösung</key>
+  <key id="diapopause">Pause</key>
+  <key id="diapostart">Play</key>
+  <key id="diaponext">Nächstes</key>
+  <key id="diapoexit">Verlassen</key>
+</i18n>

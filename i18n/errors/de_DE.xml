@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.errors" lcid="de_DE">
+  <key id="modules-photoalbum-move-topic">Sie besitzen nicht das Recht diese Rubrik an diesen Ort zu verschieben.</key>
+  <key id="modules-photoalbum-getpreferencesdocument">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Präferenzen öffnen″</key>
+  <key id="modules-photoalbum-move-rootfolder">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Eine Rubrik hinzufügen″</key>
+  <key id="modules-photoalbum-remove-topic">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Eine Rubrik entfernen″</key>
+  <key id="modules-photoalbum-editlocale">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Eine Lokale bearbeiten″</key>
+  <key id="modules-photoalbum-order">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Die Reihenfolge der Elemente ändern″</key>
+  <key id="modules-photoalbum-activate-album">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Ein Album aktivieren″</key>
+  <key id="modules-photoalbum-activate-photo">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Ein Foto aktivieren″</key>
+  <key id="modules-photoalbum-cancel-album">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Ein Album entfernen″</key>
+  <key id="modules-photoalbum-cancel-photo">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Ein Foto entfernen″</key>
+  <key id="modules-photoalbum-deactivated-photo">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Ein Foto deaktivieren″</key>
+  <key id="modules-photoalbum-deactivated-album">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Ein Album deaktivieren″</key>
+  <key id="modules-photoalbum-reactivate-photo">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Ein Album aktivieren″</key>
+  <key id="modules-photoalbum-reactivate-album">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Ein Foto aktivieren″</key>
+  <key id="modules-photoalbum-enabled">Sie besitzen nicht die Rechte folgende Aktion auszuführen: ″Zugang zum Modul″</key>
+</i18n>

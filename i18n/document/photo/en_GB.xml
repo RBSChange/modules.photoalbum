@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.document.photo" lcid="en_GB">
+  <key id="document-name">photo</key>
+  <key id="label">photo label</key>
+  <key id="label-help">photo label</key>
+  <key id="summary">summary</key>
+  <key id="thumbnail">thumbnail</key>
+  <key id="thumbnail-help">thumbnail-help</key>
+  <key id="startpublicationdate">start</key>
+  <key id="endpublicationdate">end</key>
+</i18n>

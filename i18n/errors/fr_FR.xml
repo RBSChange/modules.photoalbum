@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.errors" lcid="fr_FR">
+  <key id="modules-photoalbum-move-topic">Vous n'avez pas la permission de delpacer cette rubrique à cette emplacement.</key>
+  <key id="modules-photoalbum-getpreferencesdocument">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Ouvrir les préférences″</key>
+  <key id="modules-photoalbum-move-rootfolder">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Ajouter une rubrique″</key>
+  <key id="modules-photoalbum-remove-topic">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Retirer une rubrique″</key>
+  <key id="modules-photoalbum-editlocale">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Editer une locale″</key>
+  <key id="modules-photoalbum-order">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Modifier l'ordre des éléments″</key>
+  <key id="modules-photoalbum-activate-album">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Activer un album″</key>
+  <key id="modules-photoalbum-activate-photo">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Activer une photo″</key>
+  <key id="modules-photoalbum-cancel-album">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Annuler un album″</key>
+  <key id="modules-photoalbum-cancel-photo">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Annuler une photo″</key>
+  <key id="modules-photoalbum-deactivated-photo">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Désactiver une photo″</key>
+  <key id="modules-photoalbum-deactivated-album">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Désactiver un album″</key>
+  <key id="modules-photoalbum-reactivate-photo">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Activer un album″</key>
+  <key id="modules-photoalbum-reactivate-album">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Activer une photo″</key>
+  <key id="modules-photoalbum-enabled">vous n'avez pas les permissions suffisantes pour effectuer l'action suivante : ″Accès au module″</key>
+</i18n>

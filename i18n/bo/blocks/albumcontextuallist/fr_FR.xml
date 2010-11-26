@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.bo.blocks.albumcontextuallist" lcid="fr_FR">
+  <key id="printcontainer">Afficher la rubrique</key>
+  <key id="printcontainer-help">Affiche le libellé de la rubrique en préambule</key>
+</i18n>

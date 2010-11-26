@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.frontoffice" lcid="en_GB">
+  <key id="diaporama-view">show diaporama</key>
+  <key id="previous">&lt;&lt;</key>
+  <key id="next">&gt;&gt;</key>
+  <key id="diapoprevious">previous</key>
+  <key id="copyright">copyright</key>
+  <key id="downloadhd">HD version</key>
+  <key id="diapopause">pause</key>
+  <key id="diapostart">play</key>
+  <key id="diaponext">next</key>
+  <key id="diapoexit">exit</key>
+  <key id="create-new-album-in-topic">Create a new album in topic {containerLabel}</key>
+  <key id="create-new-photo-in-album">Create a new photo in album {albumLabel}</key>
+  <key id="this-album-is-not-published">This album is not published</key>
+  <key id="create-and-activate-at-least-one-photo-in-album">Create and activate at least one photo in album</key>
+</i18n>
