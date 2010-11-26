@@ -10,7 +10,7 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 	{
 		if ($this->isInBackoffice())
 		{
-			return block_BlockView::DUMMY;
+			return website_BlockView::DUMMY;
 		}
 		$configuration = $this->getConfiguration();
 		$album = $this->getDocumentParameter(K::COMPONENT_ID_ACCESSOR, "photoalbum_persistentdocument_album");
@@ -19,7 +19,7 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 			$album = $configuration->getDefaultcmpref();
 			if ($album === null)
 			{
-				return block_BlockView::DUMMY;
+				return website_BlockView::DUMMY;
 			}
 		}
 
@@ -27,7 +27,7 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 
 		if (!$album->isPublished())
 		{
-			return $this->genericView(block_BlockView::UNAVAILABLE);
+			return $this->genericView('Unavailable');
 		}
 
 		$useDiaporama = $configuration->getUsediaporama();
@@ -50,7 +50,7 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 			{
 				if ($this->isInBackoffice())
 				{
-					return block_BlockView::NONE;
+					return website_BlockView::NONE;
 				}
 				$this->getContext()->addScript('modules.photoalbum.lib.js.jquery-cycle-all');
 				return 'Diaporama';
@@ -77,6 +77,6 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 			$currentPageIndex = intval($request->getParameter('currentpageindex', 0));
 			$album->setCurrentPageIndex($currentPageIndex);
 		}
-		return block_BlockView::SUCCESS;
+		return website_BlockView::SUCCESS;
 	}
 }

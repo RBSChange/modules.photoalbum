@@ -25,6 +25,6 @@ class photoalbum_BlockAlbumcontextuallistAction extends website_BlockAction
 		$paginator = new paginator_Paginator('photoalbum', $request->getParameter(paginator_Paginator::PAGEINDEX_PARAMETER_NAME, 1), $items, $nbItemPerPage);
 		$request->setAttribute('paginator', $paginator);
 
-		return block_BlockView::SUCCESS;
+		return website_BlockView::SUCCESS;
 	}
 }
