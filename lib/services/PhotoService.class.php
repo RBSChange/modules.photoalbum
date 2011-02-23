@@ -114,4 +114,19 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 	        $album->getDocumentService()->publishIfPossible($album->getId());
 	    }
 	}
+
+	/**
+	 * @param photoalbum_persistentdocument_photo $document
+	 * @param string $moduleName
+	 * @param string $treeType
+	 * @param array<string, string> $nodeAttributes
+	 */	
+	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
+	{
+		if ($treeType == 'wlist')
+		{
+	    	$media = $document->getThumbnailMedia();
+	    	$nodeAttributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
+		}
+	}
 }

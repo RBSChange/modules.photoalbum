@@ -43,4 +43,23 @@ class photoalbum_AlbumService extends f_persistentdocument_DocumentService
 	{
 		return $this->createQuery()->add(Restrictions::published())->add(Restrictions::childOf($topicId))->find();
 	}
+
+	/**
+	 * @param photoalbum_persistentdocument_album $document
+	 * @param string $moduleName
+	 * @param string $treeType
+	 * @param array<string, string> $nodeAttributes
+	 */	
+	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
+	{
+		if ($treeType == 'wlist')
+		{
+			$photo = $document->getCurrentPhoto();
+			if ($photo !== null)
+			{
+		    	$media = $photo->getThumbnailMedia();
+		    	$nodeAttributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
+			}
+		}
+	}
 }

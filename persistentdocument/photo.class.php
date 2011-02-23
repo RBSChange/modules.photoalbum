@@ -18,13 +18,22 @@ class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_
 	
 	// Templating function
 	
+	/**
+	 * @var boolean
+	 */
 	private $isCurrent = false;
 	
+	/**
+	 * @param boolean $isCurrent
+	 */
 	public function setCurrent($isCurrent = true)
 	{
 	    $this->isCurrent = ($isCurrent == true);
 	}
 
+	/**
+	 * @return boolean
+	 */
 	public function isCurrent()
 	{
 	    return $this->isCurrent;
@@ -52,40 +61,38 @@ class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_
         return $media;  
 	}
 
+	/**
+	 * @return string
+	 */
 	public function getSelectorUrl()
 	{
 	    $media = $this->getThumbnailMedia();
 	    return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/photoselector");
 	}
 	
+	/**
+	 * @return string
+	 */
 	public function getPreviewUrl()
 	{
 	    $media = $this->getMedia();
 	    return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/photopreview");
 	}
 	
+	/**
+	 * @return string
+	 */
 	public function getDiaporamaUrl()
 	{
 	    $media = $this->getMedia();
 	    return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/diaporama");
 	}
 	
+	/**
+	 * @return  photoalbum_persistentdocument_album
+	 */
 	public function getAlbum()
 	{
 		return TreeService::getInstance()->getParentDocument($this);
-	}
-		
-	/**
-	 * @param string $moduleName
-	 * @param string $treeType
-	 * @param array<string, string> $nodeAttributes
-	 */	
-	protected function addTreeAttributes($moduleName, $treeType, &$nodeAttributes)
-	{
-		if ($treeType == 'wlist')
-		{
-	    	$media = $this->getThumbnailMedia();
-	    	$nodeAttributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
-		}
 	}
 }

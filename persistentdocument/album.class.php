@@ -5,6 +5,7 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 	 * @var photoalbum_persistentdocument_photo
 	 */
 	private $previousPhoto;
+	
 	/**
 	 * @var photoalbum_persistentdocument_photo
 	 */
@@ -14,13 +15,14 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 	 * @var Integer
 	 */
 	private $previousPhotoPageIndex;
+	
 	/**
 	 * @var Integer
 	 */
 	private $nextPhotoPageIndex;
+	
 	/**
 	 * Get the indexable document
-	 *
 	 * @return indexer_IndexedDocument
 	 */
 	public function getIndexedDocument()
@@ -228,24 +230,6 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 			$this->nextPhoto = $photos[$photoIndex+1];
 			$this->nextPhotoPageIndex = floor(($photoIndex+1) / $this->pageSize);
 			Framework::debug("NEXT PAGE INDEX ".$this->nextPhotoPageIndex." ".($photoIndex+1)." ".$this->pageSize);
-		}
-	}
-	
-	/**
-	 * @param string $moduleName
-	 * @param string $treeType
-	 * @param array<string, string> $nodeAttributes
-	 */	
-	protected function addTreeAttributes($moduleName, $treeType, &$nodeAttributes)
-	{
-		if ($treeType == 'wlist')
-		{
-			$photo = $this->getCurrentPhoto();
-			if ($photo !== null)
-			{
-		    	$media = $photo->getThumbnailMedia();
-		    	$nodeAttributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
-			}
 		}
 	}
 }
