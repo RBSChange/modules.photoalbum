@@ -36,13 +36,26 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 	}
 	
 	/**
+	 * @param website_UrlRewritingService $urlRewritingService
 	 * @param photoalbum_persistentdocument_photo $document
+	 * @param website_persistentdocument_website $website
+	 * @param string $lang
+	 * @param array $parameters
+	 * @return f_web_Link | null
 	 */
-	function generateUrl($document)
+	public function getWebLink($urlRewritingService, $document, $website, $lang, $parameters)
 	{
-		return LinkHelper::getDocumentUrl($document->getAlbum(), null, array("photoalbumParam[currentphoto]" => $document->getId()));
+		if (!isset($parameters['photoalbumParam']))
+		{
+			$parameters['photoalbumParam'] = array('currentphoto' => $document->getId());
+		} 
+		else
+		{
+			$parameters['photoalbumParam']['currentphoto']  = $document->getId();
+		}
+		return $urlRewritingService->getDocumentLinkForWebsite($document->getAlbum(), $website, $lang, $parameters);
 	}
-
+	
 	/**
 	 * @param photoalbum_persistentdocument_photo $document
 	 * @param Integer $parentNodeId Parent node ID where to save the document (optionnal => can be null !).
