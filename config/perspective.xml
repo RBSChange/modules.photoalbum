@@ -72,6 +72,7 @@
 				<contextaction name="edit" />
 				<contextaction name="delete" />
 				<contextaction name="createPhoto" />
+				<contextaction name="activate" />
 				<contextaction name="deactivated" />
 				<contextaction name="reactivate" />
 				<contextaction name="openOrderPhoto" />
@@ -91,6 +92,7 @@
 	<toolbar>
 		<toolbarbutton name="edit" />
 		<toolbarbutton name="delete" />
+		<toolbarbutton name="activate" />
 		<toolbarbutton name="deactivated" />
 		<toolbarbutton name="reactivate" />
 	</toolbar>
