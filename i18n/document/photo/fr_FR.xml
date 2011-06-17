@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.document.photo" lcid="fr_FR">
-  <key id="document-name">photo</key>
-  <key id="label">libellé de la photo</key>
-  <key id="label-help">libellé de la photo</key>
-  <key id="summary">description</key>
-  <key id="summary-help">description de la photo</key>
-  <key id="media">image</key>
-  <key id="media-help">image de la photo</key>
-  <key id="thumbnail">miniature</key>
-  <key id="thumbnail-help">miniature de la photo utilisée pour les apercus</key>
-  <key id="mediahd">image haute définition</key>
-  <key id="mediahd-help">image haute définition de la photo pour impression, fond d'écran ...</key>
-  <key id="copyright">copyright</key>
-  <key id="copyright-help">copyright de la photo</key>
-  <key id="startpublicationdate">début</key>
-  <key id="startpublicationdate-help">
-			La date de début de publication indique la date à partir de
-			laquelle la photo pourra être consultée par les internautes.
-			Avant cette date, la photo ne sera pas consultable.
-		</key>
-  <key id="endpublicationdate">fin</key>
-  <key id="endpublicationdate-help">
-			La date de fin de publication indique la date jusqu'à
-			laquelle la photo pourra être consultée par les internautes.
-			Après cette date, la photo ne sera plus consultable.
-		</key>
+	<key id="document-name">photo</key>
+	<key id="label">libellé de la photo</key>
+	<key id="label-help">libellé de la photo</key>
+	<key id="summary">description</key>
+	<key id="summary-help">description de la photo</key>
+	<key id="media">image</key>
+	<key id="media-help">image de la photo</key>
+	<key id="thumbnail">miniature</key>
+	<key id="thumbnail-help">miniature de la photo utilisée pour les apercus</key>
+	<key id="mediahd">image haute définition</key>
+	<key id="mediahd-help">image haute définition de la photo pour impression, fond d'écran ...</key>
+	<key id="copyright">copyright</key>
+	<key id="copyright-help">copyright de la photo</key>
+	<key id="startpublicationdate">début</key>
+	<key id="startpublicationdate-help">La date de début de publication indique la date à partir de laquelle la photo pourra être consultée par les internautes. Avant cette date, la photo ne sera pas consultable.</key>
+	<key id="endpublicationdate">fin</key>
+	<key id="endpublicationdate-help">La date de fin de publication indique la date jusqu'à laquelle la photo pourra être consultée par les internautes. Après cette date, la photo ne sera plus consultable.</key>
 </i18n>

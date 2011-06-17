@@ -4,11 +4,9 @@
 	<binding fileName="modules/generic/persistentdocument/import/generic_binding.xml" />
 
 	<systemfolder module="list" relatedmodule="photoalbum">
-		<staticlist listid="modules_photoalbum/defaultmode" 
-			label="Mode d'affichage d'un album"
-			description="Mode d'affichage d'un album">
-			<staticitem label="&amp;modules.photoalbum.bo.blocks.defaultmode.standard;" value="standard" />
-			<staticitem label="&amp;modules.photoalbum.bo.blocks.defaultmode.diaporama;" value="diaporama" />
+		<staticlist listid="modules_photoalbum/defaultmode" label="Modes d'affichage d'un album">
+			<staticitem label="m.photoalbum.bo.blocks.defaultmode.standard" value="standard" />
+			<staticitem label="m.photoalbum.bo.blocks.defaultmode.diaporama" value="diaporama" />
 		</staticlist>
 	</systemfolder>
 </script>

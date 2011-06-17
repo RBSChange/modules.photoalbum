@@ -2,7 +2,7 @@
 /**
  * @package modules.photoalbum
  */
-class photoalbum_PhotoInfosAction extends photoalbum_Action
+class photoalbum_PhotoInfosAction extends f_action_BaseAction
 {
 	/**
 	 * @param Context $context

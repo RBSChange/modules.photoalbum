@@ -142,4 +142,55 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 	    	$nodeAttributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
 		}
 	}
+	
+	/**
+	 * @param photoalbum_persistentdocument_photo $document
+	 * @param string $forModuleName
+	 * @param array $allowedSections
+	 * @return array
+	 */
+	public function getResume($document, $forModuleName, $allowedSections = null)
+	{
+		$data = parent::getResume($document, $forModuleName, $allowedSections);
+
+		$media = $document->getMedia();
+		$rc = RequestContext::getInstance();
+		$lang = ($media->isContextLangAvailable()) ? $rc->getLang() : $media->getLang();
+		try
+		{
+			$rc->beginI18nWork($lang);
+			
+			$info = $media->getCommonInfo();
+			$data['content'] = array(
+				'mimetype' => $media->getMimetype(),
+				'size' => $info['size'],
+				'previewimgurl' => array('id' => $media->getId(), 'lang' => $lang)
+			);
+
+			if ($media->getMediatype() == MediaHelper::TYPE_IMAGE)
+			{
+				$pixelsLabel = LocaleService::getInstance()->transBO('m.media.bo.doceditor.pixels');
+				$data['content']['width'] = $info['width'].' '.$pixelsLabel;
+				$data['content']['height'] = $info['height'].' '.$pixelsLabel;
+				$data['content']['previewimgurl']['image'] = LinkHelper::getUIActionLink('media', 'BoDisplay')
+					->setQueryParameter('cmpref', $media->getId())
+					->setQueryParameter('max-height', 128)
+					->setQueryParameter('max-width', 128)
+					->setQueryParameter('lang', $lang)
+					->setQueryParameter('time', date_Calendar::now()->getTimestamp())->getUrl();
+			}
+			else
+			{
+				$data['content']['previewimgurl']['image'] = '';
+			}
+
+			$rc->endI18nWork();
+		}
+		catch (Exception $e)
+		{
+			$rc->endI18nWork($e);
+		}
+
+		return $data;
+	}
 }

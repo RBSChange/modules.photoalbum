@@ -1,20 +1,19 @@
 <ul id="controls">
-	<li id="diaporamaprev" class="first"><a class="link" href="javascript:;"><span i18n:translate="&modules.photoalbum.frontoffice.Diapoprevious;">Prev</span></a></li>
-	<li id="diaporamapause"><a class="link" href="javascript:;"><span i18n:translate="&modules.photoalbum.frontoffice.Diapopause;">Pause</span></a></li>
-	<li id="diaporamaresume"><a class="link" href="javascript:;"><span i18n:translate="&modules.photoalbum.frontoffice.Diapostart;">Start</span></a></li>
-	<li id="diaporamanext"><a class="link" href="javascript:;"><span i18n:translate="&modules.photoalbum.frontoffice.Diaponext;">Next</span></a></li>
-	<li id="diaporamaexit" class="last"><a class="link" change:link="document item;photoalbumParam[diaporama] '0'"><span i18n:translate="&modules.photoalbum.frontoffice.Diapoexit;">Quitter</span></a></li>
+	<li id="diaporamaprev" class="first"><a class="link" href="javascript:;"><span>${trans:m.photoalbum.frontoffice.diapoprevious,ucf}</span></a></li>
+	<li id="diaporamapause"><a class="link" href="javascript:;"><span>${trans:m.photoalbum.frontoffice.diapopause,ucf}</span></a></li>
+	<li id="diaporamaresume"><a class="link" href="javascript:;"><span>${trans:m.photoalbum.frontoffice.diapostart,ucf}</span></a></li>
+	<li id="diaporamanext"><a class="link" href="javascript:;"><span>${trans:m.photoalbum.frontoffice.diaponext,ucf}</span></a></li>
+	<li id="diaporamaexit" class="last"><a change:link="document item; photoalbumParam[diaporama] '0'"><span>${trans:m.photoalbum.frontoffice.diapoexit,ucf}</span></a></li>
 </ul>
 <div id="diaporama">
 	<div id="photozone">
 		<div tal:repeat="photo item/getPublishedPhotos">
-			<h4 tal:condition="configuration/getDiaporamaincludestext" change:h="">${photo/getLabel}</h4>
-			<img class="image" tal:attributes="src photo/getDiaporamaUrl;title photo/getLabel;alt photo/getLabel;id photo/getId"/>
-			<p tal:condition="configuration/getDiaporamaincludestext" class="normal" tal:content="photo/getSummaryAsHtml">description de la photo, lorem ipsum dolor sit amet</p>
-			<tal:block tal:condition="configuration/getDiaporamaincludestext" class="normal">
-				<p tal:condition="photo/getCopyright">
-				<tal:block change:translate="&modules.photoalbum.frontoffice.CopyrightLabel;">Copyright</tal:block>
-				<span tal:replace="photo/getCopyright">RBS</span>
+			<h4 tal:condition="configuration/getDiaporamaincludestext" change:h="">${photo/getLabelAsHtml}</h4>
+			<img class="image" src="${photo/getDiaporamaUrl}" title="{photo/getLabelAsHtml}" alt="${photo/getLabelAsHtml}" id="${photo/getId}" />
+			<p tal:condition="configuration/getDiaporamaincludestext" class="normal">${photo/getSummaryAsHtml}</p>
+			<tal:block tal:condition="configuration/getDiaporamaincludestext">
+				<p tal:condition="photo/getCopyright" class="normal">
+					${trans:m.photoalbum.frontoffice.copyright,lab,ucf} ${photo/getCopyrightAsHtml}
 				</p>
 			</tal:block>
 		</div>

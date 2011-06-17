@@ -10,7 +10,6 @@
 		<add name="copyright" type="LongString" localized="true" />
 		<add name="startpublicationdate" localized="true" />
 		<add name="endpublicationdate" localized="true" />
-		<add name="publicationstatus" localized="true" />
 	</properties>
 	<statuses default="DRAFT" />
 </document>

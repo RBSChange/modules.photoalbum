@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.bo.blocks.album" lcid="fr_FR">
-  <key id="defaultcmpref">Album par défaut</key>
-  <key id="defaultcmpref-help">Si aucun album n'est présent, afficher cet album</key>
-  <key id="defaultmode">Mode d'affichage</key>
-  <key id="defaultmode-help">Choisissez de démarrer en mode standard ou en mode diaporama</key>
-  <key id="usediaporama">Utilisation du diaporama</key>
-  <key id="usediaporama-help">Activer ou non la fonctionnalité diaporama.</key>
-  <key id="diaporamaincludestext">Afficher le texte dans le diaporama</key>
-  <key id="diaporamaincludestext-help">Les texte des photos sera affiché en mode diaporama</key>
-  <key id="photoinselector">Nombre de photos par page</key>
-  <key id="photoinselector-help">Nombre maximal de photos affiché par page</key>
+	<key id="title">détail d'un album de la rubrique</key>
+	<key id="defaultcmpref">Album par défaut</key>
+	<key id="defaultcmpref-help">Si aucun album n'est présent, afficher cet album</key>
+	<key id="defaultmode">Mode d'affichage</key>
+	<key id="defaultmode-help">Choisissez de démarrer en mode standard ou en mode diaporama</key>
+	<key id="usediaporama">Utilisation du diaporama</key>
+	<key id="usediaporama-help">Activer ou non la fonctionnalité diaporama.</key>
+	<key id="diaporamaincludestext">Afficher le texte dans le diaporama</key>
+	<key id="diaporamaincludestext-help">Les texte des photos sera affiché en mode diaporama</key>
+	<key id="photoinselector">Nombre de photos par page</key>
+	<key id="photoinselector-help">Nombre maximal de photos affiché par page</key>
 </i18n>

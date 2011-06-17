@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.document.album" lcid="de_DE">
-  <key id="document-name">Album</key>
-  <key id="label">Albumname</key>
-  <key id="label-help">Albumname</key>
-  <key id="summary">Beschreibung</key>
-  <key id="summary-help">Albumbeschreibung</key>
-  <key id="startpublicationdate">Start</key>
-  <key id="startpublicationdate-help">Das Anfangsdatum der Veröffentlichung bestimmt ab welchem Datum das Album von den Benutzern genutzt werden kann.
+	<key id="document-name">Album</key>
+	<key id="label">Albumname</key>
+	<key id="label-help">Albumname</key>
+	<key id="summary">Beschreibung</key>
+	<key id="summary-help">Albumbeschreibung</key>
+	<key id="startpublicationdate">Start</key>
+	<key id="startpublicationdate-help">Das Anfangsdatum der Veröffentlichung bestimmt ab welchem Datum das Album von den Benutzern genutzt werden kann.
 		Vor diesem Datum kann das Album nicht genutzt werden.</key>
-  <key id="endpublicationdate">Ende</key>
-  <key id="endpublicationdate-help">Das Enddatum der Veröffentlichung bestimmt bis zu welchem Datum das Album von den Benutzern genutzt werden kann.
+	<key id="endpublicationdate">Ende</key>
+	<key id="endpublicationdate-help">Das Enddatum der Veröffentlichung bestimmt bis zu welchem Datum das Album von den Benutzern genutzt werden kann.
 		Nach diesem Datum kann das Album nicht mehr genutzt werden.</key>
 </i18n>

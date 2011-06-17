@@ -1,6 +1,4 @@
-<h3 change:h="">${item/getLabelAsHtml} <a change:edit="document item"></a></h3>
-
-<p change:create="" model="photoalbum/photo" parentId="${item/getId}"><tal:block change:translate="modules.photoalbum.frontoffice.create-new-photo-in-album; albumLabel item/getLabelAsHtml">Ajouter une nouvelle photo dans l'album ${item/getLabelAsHtml}</tal:block></p>
+<h3 change:h="">${item/getLabelAsHtml}</h3>
 
 <tal:block tal:condition="item/getPublishedPhotos/0">
 	<div class="photopreview">
@@ -12,7 +10,11 @@
 	</div>
 	
 	<div class="selectorcontainer">
-		<p class="normal" tal:condition="usediaporama"><a id="diaporamalink" change:currentPageLink="diaporamaparams" class="link" style="visibility: hidden;"><img change:img="icon/small/projection-screen.png" alt="" /><tal:block change:translate="modules.photoalbum.frontoffice.Diaporama-view" /></a></p>
+		<p class="normal" tal:condition="usediaporama">
+			<a id="diaporamalink" change:currentPageLink="diaporamaparams" class="link" style="visibility: hidden;">
+				<img change:img="icon/small/projection-screen.png" alt="" /> ${trans:m.photoalbum.frontoffice.diaporama-view,ucf}
+			</a>
+		</p>
 		<div id="selectorcontainer">
 			<tal:block change:include="module 'photoalbum'; template 'Photoalbum-Block-Album-Selector'; type 'html'; item item" />
 		</div>
@@ -22,7 +24,7 @@
 	<!--
 	var PhotoAlbum = {
 		onSelectorClick : function(e) {
-	    		var pageindex = jQuery(this).attr('change:pageindex');
+	    		var pageindex = jQuery(this).attr('data-pageindex');
 	    		var lang = pageHandler.lang;
 	    		PhotoAlbum.loadSelector(PhotoAlbum.albumid, pageindex, PhotoAlbum.pageSize, lang);
 	    		return false;
@@ -35,13 +37,13 @@
 	    	
 		onSelectorImgClick : function(e) {
 				var elem = jQuery(this);
-				var newPageIndex = elem.attr('change:pageindex');
+				var newPageIndex = elem.attr('data-pageindex');
 				if (newPageIndex != null && newPageIndex != PhotoAlbum.currentPageIndex)
 				{
 					PhotoAlbum.loadSelector(PhotoAlbum.albumid, newPageIndex, PhotoAlbum.pageSize, pageHandler.lang);
 				}
 				
-				var photoid = elem.attr('change:photoid'); 
+				var photoid = elem.attr('data-photoid'); 
 				var previewInfos = jQuery('#previewinfos');
 				previewInfos.css("width", previewInfos.width()+"px");
 				previewInfos.css("height", previewInfos.height()+"px");
@@ -73,9 +75,9 @@
 				previewInfos.css("height", previewInfosData.height());
 			});
 			var photoInfoControl = jQuery('#photoalbum_infocontrol');
-			PhotoAlbum.currentPageIndex = photoInfoControl.attr('change:currentpageindex');
-			PhotoAlbum.pageSize = photoInfoControl.attr('change:pagesize');
-			PhotoAlbum.albumid = photoInfoControl.attr('change:albumid');
+			PhotoAlbum.currentPageIndex = photoInfoControl.attr('data-currentpageindex');
+			PhotoAlbum.pageSize = photoInfoControl.attr('data-pagesize');
+			PhotoAlbum.albumid = photoInfoControl.attr('data-albumid');
 			jQuery('#photoinfocontrolprevious').attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
 			jQuery('#photoinfocontrolnext').attr('href', 'javascript:return false;').bind('click', PhotoAlbum.onSelectorImgClick);
 			jQuery('#previewinfos a.lightbox').fancybox();
@@ -93,4 +95,4 @@
 	//-->
 	</script>
 </tal:block>
-<p class="normal" tal:condition="not: item/getPublishedPhotos/0" change:translate="modules.photoalbum.frontoffice.Empty-album"></p>
+<p class="normal" tal:condition="not: item/getPublishedPhotos/0">${trans:m.photoalbum.frontoffice.empty-album,ucf}</p>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.bo.blocks.album" lcid="de_DE">
-  <key id="defaultcmpref">Standardalbum</key>
-  <key id="defaultmode">Anzeigemodus</key>
-  <key id="usediaporama">Nutzung der Diashow</key>
-  <key id="photoinselector">Anzahl Bilder pro Seite</key>
+	<key id="title">Albumdetail der Rubrik</key>
+	<key id="defaultcmpref">Standardalbum</key>
+	<key id="defaultmode">Anzeigemodus</key>
+	<key id="usediaporama">Nutzung der Diashow</key>
+	<key id="photoinselector">Anzahl Bilder pro Seite</key>
 </i18n>

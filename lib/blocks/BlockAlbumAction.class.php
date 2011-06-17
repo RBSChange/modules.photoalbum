@@ -8,27 +8,28 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 	 */
 	public function execute($request, $response)
 	{
-		if ($this->isInBackoffice())
+		if ($this->isInBackofficeEdition())
 		{
-			return website_BlockView::DUMMY;
+			return website_BlockView::NONE;
 		}
+		
 		$configuration = $this->getConfiguration();
-		$album = $this->getDocumentParameter(K::COMPONENT_ID_ACCESSOR, "photoalbum_persistentdocument_album");
+		$album = $this->getDocumentParameter();
 		if ($album === null)
 		{
 			$album = $configuration->getDefaultcmpref();
-			if ($album === null)
-			{
-				return website_BlockView::DUMMY;
-			}
 		}
-
-		$request->setAttribute('item', $album);
-
-		if (!$album->isPublished())
+		
+		$isOnDetailPage = TagService::getInstance()->hasTag($this->getContext()->getPersistentPage(), 'functional_photoalbum_album-detail');
+		if (!($album instanceof photoalbum_persistentdocument_album) || !$album->isPublished())
 		{
-			return $this->genericView('Unavailable');
+			if ($isOnDetailPage && !$this->isInBackofficePreview())
+			{
+				HttpController::getInstance()->redirect("website", "Error404");
+			}
+			return website_BlockView::NONE;
 		}
+		$request->setAttribute('item', $album);
 
 		$useDiaporama = $configuration->getUsediaporama();
 		$request->setAttribute('usediaporama', $useDiaporama);
@@ -42,31 +43,26 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 			}
 			else
 			{
-				$defaultMode = $configuration->getConfigurationParameter('defaultmode', 'standard');
-				$diaporama = ($defaultMode == 'diaporama');
+				$diaporama = ($configuration->getDefaultmode() == 'diaporama');
 			}
 
 			if ($diaporama)
 			{
-				if ($this->isInBackoffice())
-				{
-					return website_BlockView::NONE;
-				}
 				$this->getContext()->addScript('modules.photoalbum.lib.js.jquery-cycle-all');
 				return 'Diaporama';
 			}
 		}
 
-		$pageSize = intval($configuration->getConfigurationParameter('photoinselector', 5));
+		$pageSize = $configuration->getPhotoinselector();
 		if ($pageSize > 0)
 		{
 			$album->setPageSize($pageSize);
 		}
 
 		$currentphotoId = intval($request->getParameter('currentphoto', 0));
-		if ($currentphotoId != 0)
+		if ($currentphotoId > 0)
 		{
-			$currentPhoto = DocumentHelper::getDocumentInstance($currentphotoId, "modules_photoalbum/photo");
+			$currentPhoto = photoalbum_persistentdocument_photo::getInstanceById($currentphotoId);
 			if ($currentPhoto->isPublished())
 			{
 				$album->setCurrentPhotoId($currentphotoId);
@@ -74,8 +70,7 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 		}
 		else
 		{
-			$currentPageIndex = intval($request->getParameter('currentpageindex', 0));
-			$album->setCurrentPageIndex($currentPageIndex);
+			$album->setCurrentPageIndex(intval($request->getParameter('currentpageindex', 0)));
 		}
 		return website_BlockView::SUCCESS;
 	}

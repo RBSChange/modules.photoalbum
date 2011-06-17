@@ -1,9 +1,4 @@
-<div>
-	<h3 tal:condition="configuration/getPrintcontainer" change:h="">${container/getLabelAsHtml}</h3>
-	<p change:create="" model="photoalbum/album" parentId="${container/getId}" change:translate="modules.photoalbum.frontoffice.create-new-album-in-topic; containerLabel container/getLabelAsHtml"></p>
-	<ol class="photoalbum">
-		<tal:block tal:repeat="item paginator">
-			<tal:block change:include="module 'photoalbum'; template 'Photoalbum-Block-AlbumList-Success'; type 'html'; item item" />
-		</tal:block>
-	</ol>
-</div>
+<h3 tal:condition="configuration/getPrintcontainer" change:h="">${container/getLabelAsHtml}</h3>
+<ol class="photoalbum">
+	<tal:block tal:repeat="item paginator" change:include="module 'photoalbum'; template 'Photoalbum-Block-AlbumList-Success'; type 'html'; item item" />
+</ol>

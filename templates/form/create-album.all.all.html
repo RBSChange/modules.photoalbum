@@ -1,3 +1,0 @@
-<h2 change:h="">Création d'un album dans la rubrique ${parent/getLabel}</h2>
-<tal:block tal:define="global cancel_confirm">return confirm('Êtes-vous sûr(e) de vouloir annuler la création ?');</tal:block>
-<tal:block change:include="module 'photoalbum'; template 'form/album'; type 'html'; submitAction 'insert'; edit_from_url edit_from_url; cancel_confirm cancel_confirm" />

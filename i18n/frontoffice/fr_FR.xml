@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.frontoffice" lcid="fr_FR">
-  <key id="diaporama-view">afficher le diaporama</key>
-  <key id="previous">&lt;&lt;</key>
-  <key id="next">&gt;&gt;</key>
-  <key id="diapoprevious">précédent</key>
-  <key id="copyright">copyright</key>
-  <key id="downloadhd">Version Haute-Définition</key>
-  <key id="diapopause">pause</key>
-  <key id="diapostart">lecture</key>
-  <key id="diaponext">suivant</key>
-  <key id="diapoexit">quitter</key>
-  <key id="create-new-album-in-topic">Créer un album dans la rubrique {containerLabel}</key>
-  <key id="create-new-photo-in-album">Ajouter une nouvelle photo dans l'album {albumLabel}</key>
-  <key id="this-album-is-not-published">Cet album n'est pas publié.</key>
-  <key id="create-and-activate-at-least-one-photo-in-album">Créez et activez au moins une photo dans l'album.</key>
-  <key id="empty-album">Cet album est vide.</key>
+	<key id="diaporama-view">afficher le diaporama</key>
+	<key id="previous">&lt;&lt;</key>
+	<key id="next">&gt;&gt;</key>
+	<key id="diapoprevious">précédent</key>
+	<key id="copyright">copyright</key>
+	<key id="downloadhd">Version Haute-Définition</key>
+	<key id="diapopause">pause</key>
+	<key id="diapostart">lecture</key>
+	<key id="diaponext">suivant</key>
+	<key id="diapoexit">quitter</key>
+	<key id="create-new-album-in-topic">Créer un album dans la rubrique {containerLabel}</key>
+	<key id="create-new-photo-in-album">Ajouter une nouvelle photo dans l'album {albumLabel}</key>
+	<key id="this-album-is-not-published">Cet album n'est pas publié.</key>
+	<key id="create-and-activate-at-least-one-photo-in-album">Créez et activez au moins une photo dans l'album.</key>
+	<key id="empty-album">Cet album est vide.</key>
 </i18n>
