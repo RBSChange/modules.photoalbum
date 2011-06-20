@@ -5,4 +5,15 @@
 			<dependency name="modules.website.lib.js.jquery" />
 		</dependencies>
 	</script>
+	<script name="modules.photoalbum.lib.js.galleria">
+		<dependencies>
+			<dependency name="modules.website.lib.js.jquery" />
+		</dependencies>
+	</script>
+	<script name="modules.photoalbum.lib.js.galleria-classic">
+		<dependencies>
+			<dependency name="modules.website.lib.js.jquery" />
+			<dependency name="modules.photoalbum.lib.js.galleria" />
+		</dependencies>
+	</script>
 </scripts>

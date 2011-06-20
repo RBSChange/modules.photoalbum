@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.bo.blocks.albumslideshow" lcid="fr_FR">
+	<key id="title">diaporama d'un album</key>
+	<key id="slideshowheight">hauteur du diaporama</key>
+	<key id="slideshowWidth">largeur du diaporama</key>
+	<key id="imageHeight">hauteur maximale des images</key>
+	<key id="imageWidth">largeur maximale des images</key>
+	<key id="showthumbnails">afficher les miniatures</key>
+	<key id="thumbHeight">hauteur maximale des miniatures</key>
+	<key id="thumbWidth">largeur maximale des miniatures</key>
+	<key id="lightbox">activer le zoom</key>
+	<key id="transition">effet de transition</key>
+	<key id="autoplay">défilement automatique</key>
+	<key id="showblocktitle">afficher le titre</key>
+</i18n>

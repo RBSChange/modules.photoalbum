@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.list" lcid="fr_FR">
+	<key id="transition-none">instantanée</key>
+	<key id="transition-fade">fondu</key>
+	<key id="transition-flash">flash</key>
+	<key id="transition-pulse">pulse</key>
+	<key id="transition-slide">défilement</key>
+	<key id="transition-fadeslide">défilement fondu</key>
+</i18n>

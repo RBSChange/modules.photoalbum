@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rights>
 	<actions>
-		<document name="rootfolder" />
+		<document name="rootfolder">
+			<action name="InitStructure" />
+		</document>
 		<document name="topic" />
 		<document name="album" />
 		<document name="photo" />
@@ -14,6 +16,7 @@
 			<permission name="GetPreferencesDocument" />
 			<permission name="EditLocale" />
 			<permission name="Update.rootfolder" />
+			<permission name="InitStructure" />
 		</role>		
 		<role name="Writer" extend="Guest">
 			<permission name="Order" />

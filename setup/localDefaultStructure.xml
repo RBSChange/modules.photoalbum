@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
+
+	<attribute name="template" default="true">webfactory/tplTwo</attribute>
+	
+	<topic byDocumentId-attr="">
+		<page label="Liste des albums" isIndexPage="true" navigationVisibility="hidden" indexingstatus="false"
+			byTag="functional_photoalbum_album-list">
+			<changecontent for="content-block">
+				<changeblock type="modules_photoalbum_albumcontextuallist" />
+			</changecontent>
+		</page>
+
+		<page label="Album" navigationVisibility="hidden" indexingstatus="false"
+			byTag="functional_photoalbum_album-detail">
+			<changecontent for="content-block">
+				<changeblock type="modules_photoalbum_album" />
+			</changecontent>
+		</page>
+	</topic>
+</script>

@@ -1,0 +1,5 @@
+<h2 change:h="" tal:condition="configuration/getShowBlockTitle">${album/getLabelAsHtml}</h2>
+
+<tal:block change:slideshow="docs album/getPublishedPhotos" mediaGetter="getMedia" descriptionGetter="getDescription" options="${options}"
+	thumbHeight="${configuration/getThumbHeight}" thumbWidth="${configuration/getThumbWidth}"
+	imageHeight="${configuration/getImageHeight}" imageWidth="${configuration/getImageWidth}" class="${slideshowClass}" />

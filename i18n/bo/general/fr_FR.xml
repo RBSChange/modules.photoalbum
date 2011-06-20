@@ -5,4 +5,7 @@
 	<key id="generalities">propriétés principales</key>
 	<key id="publication">publication</key>
 	<key id="visual">visuel</key>
+	<key id="invalid-topic">Vous devez sélectionner une rubrique.</key>
+	<key id="some-pages-already-initialized">Certaines des pages globales ont déjà été initialisées pour ce site.</key>
+	<key id="topic-already-contains-some-of-this-pages">Cette rubrique contient déjà certaines des pages.</key>
 </i18n>

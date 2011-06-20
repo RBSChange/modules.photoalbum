@@ -1,8 +1,7 @@
 <?php
-class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_photobase implements indexer_IndexableDocument{
+class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_photobase implements indexer_IndexableDocument
+{
 	/**
-	 * Get the indexable document
-	 *
 	 * @return indexer_IndexedDocument
 	 */
 	public function getIndexedDocument()
@@ -15,20 +14,18 @@ class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_
 		$indexedDoc->setText($this->getSummary() . "\n" . $this->getCopyright());
 		return $indexedDoc;
 	}
-	
-	// Templating function
-	
+
 	/**
 	 * @var boolean
 	 */
 	private $isCurrent = false;
-	
+
 	/**
 	 * @param boolean $isCurrent
 	 */
 	public function setCurrent($isCurrent = true)
 	{
-	    $this->isCurrent = ($isCurrent == true);
+		$this->isCurrent = ($isCurrent == true);
 	}
 
 	/**
@@ -36,29 +33,35 @@ class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_
 	 */
 	public function isCurrent()
 	{
-	    return $this->isCurrent;
+		return $this->isCurrent;
 	}
-	
+
 	/**
 	 * @return media_persistentdocument_media
 	 */
 	public final function getThumbnailMedia()
 	{
-	    return ($this->getThumbnail() != null) ? $this->getThumbnail() : $this->getMedia();
+		return ($this->getThumbnail() != null) ? $this->getThumbnail() : $this->getMedia();
 	}
-	
+
+	/**
+	 * @return media_persistentdocument_media
+	 */
 	public function getPopulatedThumbnail()
 	{
-        $media = $this->getThumbnailMedia();
-        $media->setTitle($this->getLabel());
-        return $media;  
+		$media = $this->getThumbnailMedia();
+		$media->setTitle($this->getLabel());
+		return $media;
 	}
-	
+
+	/**
+	 * @return media_persistentdocument_media
+	 */
 	public function getPopulatedMedia()
 	{
-        $media = $this->getMedia();
-        $media->setTitle($this->getLabel());
-        return $media;  
+		$media = $this->getMedia();
+		$media->setTitle($this->getLabel());
+		return $media;
 	}
 
 	/**
@@ -66,28 +69,28 @@ class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_
 	 */
 	public function getSelectorUrl()
 	{
-	    $media = $this->getThumbnailMedia();
-	    return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/photoselector");
+		$media = $this->getThumbnailMedia();
+		return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/photoselector");
 	}
-	
+
 	/**
 	 * @return string
 	 */
 	public function getPreviewUrl()
 	{
-	    $media = $this->getMedia();
-	    return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/photopreview");
+		$media = $this->getMedia();
+		return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/photopreview");
 	}
-	
+
 	/**
 	 * @return string
 	 */
 	public function getDiaporamaUrl()
 	{
-	    $media = $this->getMedia();
-	    return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/diaporama");
+		$media = $this->getMedia();
+		return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/diaporama");
 	}
-	
+
 	/**
 	 * @return  photoalbum_persistentdocument_album
 	 */

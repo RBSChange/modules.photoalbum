@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
 <actions>
-
 	<action name="openOrderPhoto">
 		<parameter name="listWidget" />
 		<body><![CDATA[
 			this.openOrderChildrenPanel(listWidget, null, ['modules_photoalbum/photo']);
 		]]></body>
-	</action>
-	
+	</action>	
 	<action name="openOrderAlbum">
 		<parameter name="listWidget" />
 		<body><![CDATA[
@@ -17,15 +15,31 @@
 	
 	<action name="createAlbum">
 		<parameter name="listWidget"/>
-		<body><![CDATA[
-			this.createDocumentEditor('modules_photoalbum_album', listWidget.getSelectedItems()[0].id);
-		]]></body>
-	</action>
-	
+		<body><![CDATA[this.createDocumentEditor('modules_photoalbum_album', listWidget.getSelectedItems()[0].id);]]></body>
+	</action>	
 	<action name="createPhoto">
 		<parameter name="listWidget"/>
+		<body><![CDATA[this.createDocumentEditor('modules_photoalbum_photo', listWidget.getSelectedItems()[0].id);]]></body>
+	</action>
+	<action name="initLocalStructure">
+		<parameter name="listWidget" />
 		<body><![CDATA[
-			this.createDocumentEditor('modules_photoalbum_photo', listWidget.getSelectedItems()[0].id);
+			try
+			{
+				var params = { 
+					module: 'website', 
+					allow: 'modules_website_topic,modules_website_systemtopic', 
+					single: true, 
+					originalModule: this, 
+					scriptModuleName: 'photoalbum', 
+					scriptName: 'localDefaultStructure'
+				};
+				getController().openModalDialog(this, 'selectStructureRoot', params);
+			}
+			catch (e)
+			{
+				wCore.error('catalog.initDefaultStructure', [], e);
+			}
 		]]></body>
 	</action>
 </actions>

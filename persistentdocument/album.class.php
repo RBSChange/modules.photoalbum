@@ -1,6 +1,21 @@
 <?php
-class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_albumbase implements indexer_IndexableDocument{
-
+class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_albumbase implements indexer_IndexableDocument
+{
+	/**
+	 * Get the indexable document
+	 * @return indexer_IndexedDocument
+	 */
+	public function getIndexedDocument()
+	{
+		$indexedDoc = new indexer_IndexedDocument();
+		$indexedDoc->setId($this->getId());
+		$indexedDoc->setDocumentModel('modules_photoalbum/album');
+		$indexedDoc->setLabel($this->getLabel());
+		$indexedDoc->setLang(RequestContext::getInstance()->getLang());
+		$indexedDoc->setText($this->getSummary());
+		return $indexedDoc;
+	}
+	
 	/**
 	 * @var photoalbum_persistentdocument_photo
 	 */
@@ -22,31 +37,33 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 	private $nextPhotoPageIndex;
 	
 	/**
-	 * Get the indexable document
-	 * @return indexer_IndexedDocument
+	 * @var media_persistentdocument_media
 	 */
-	public function getIndexedDocument()
-	{
-		$indexedDoc = new indexer_IndexedDocument();
-		$indexedDoc->setId($this->getId());
-		$indexedDoc->setDocumentModel('modules_photoalbum/album');
-		$indexedDoc->setLabel($this->getLabel());
-		$indexedDoc->setLang(RequestContext::getInstance()->getLang());
-		$indexedDoc->setText($this->getSummary());
-		return $indexedDoc;
-	}
-
-	// Templating function
 	private $currentThumbnail = null;
 
+	/**
+	 * @var photoalbum_persistentdocument_photo[]
+	 */
 	private $publishedPhotos = null;
 
+	/**
+	 * @var integer
+	 */
 	private $currentphotoIndex = 0;
 
+	/**
+	 * @var integer
+	 */
 	private $currentPageIndex = 0;
 
+	/**
+	 * @var integer
+	 */
 	private $pageSize = 10;
 
+	/**
+	 * @return photoalbum_persistentdocument_photo[]
+	 */
 	public function getPublishedPhotos()
 	{
 		$this->checkLoaded();
@@ -58,6 +75,9 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 		return $this->publishedPhotos;
 	}
 
+	/**
+	 * @return media_persistentdocument_media
+	 */
 	public function getThumbnail()
 	{
 		$this->checkLoaded();
@@ -77,6 +97,9 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 		return $this->currentThumbnail === false ? NULL : $this->currentThumbnail;
 	}
 	
+	/**
+	 * @param integer $pageSize
+	 */
 	public function setPageSize($pageSize)
 	{
 		if ($pageSize !== null)
@@ -85,11 +108,17 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 		}
 	}
 
+	/**
+	 * @return integer
+	 */
 	public function getPageSize()
 	{
 		return $this->pageSize;
 	}
 
+	/**
+	 * @param integer $currentphotoId
+	 */
 	public function setCurrentPhotoId($currentphotoId)
 	{
 		$currentphotoIndex = 0;
@@ -106,6 +135,9 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 		$this->setCurrentPhotoIndex(0);
 	}
 
+	/**
+	 * @param integer $pageIndex
+	 */
 	public function setCurrentPageIndex($pageIndex)
 	{
 		if ($pageIndex < 0)
@@ -117,6 +149,9 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 		$this->setCurrentPhotoIndex($this->currentPageIndex * $this->pageSize);
 	}
 
+	/**
+	 * @return integer
+	 */
 	public function getCurrentPageIndex()
 	{
 		return $this->currentPageIndex;
@@ -143,11 +178,17 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 		return $this->previousPhoto;
 	}
 
+	/**
+	 * @return integer
+	 */
 	public function getPreviousPhotoPageIndex()
 	{
 		return $this->previousPhotoPageIndex;
 	}
 
+	/**
+	 * @return integer
+	 */
 	public function getNextPhotoPageIndex()
 	{
 		return $this->nextPhotoPageIndex;
@@ -183,21 +224,33 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 		return $selector;
 	}
 
+	/**
+	 * @return integer 
+	 */
 	public function getPagePreviousSelector()
 	{
 		return $this->currentPageIndex - 1;
 	}
 
+	/**
+	 * @return boolean
+	 */
 	public function hasPagePreviousSelector()
 	{
 		return $this->getPagePreviousSelector() >= 0;
 	}
 
+	/**
+	 * @return integer
+	 */
 	public function getPageNextSelector()
 	{
 		return $this->currentPageIndex + 1;
 	}
 
+	/**
+	 * @return boolean
+	 */
 	public function hasPageNextSelector()
 	{
 		return ($this->getPageNextSelector() * $this->pageSize) < count($this->getPublishedPhotos());

@@ -3,10 +3,6 @@
 	<binding fileName="modules/list/persistentdocument/import/list_binding.xml" />
 
 	<systemfolder module="list" relatedmodule="photoalbum">
-		<staticlist listid="modules_photoalbum/defaultmode" label="Modes d'affichage d'un album">
-			<staticitem label="m.photoalbum.bo.blocks.defaultmode.standard" value="standard" />
-			<staticitem label="m.photoalbum.bo.blocks.defaultmode.diaporama" value="diaporama" />
-		</staticlist>
 		<staticlist listid="modules_photoalbum/slideshowtransitions" label="Modes transistions du slideshow">
 			<staticitem label="m.photoalbum.list.transition-none" value="none" />
 			<staticitem label="m.photoalbum.list.transition-fade" value="fade" />

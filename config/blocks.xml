@@ -5,13 +5,58 @@
 			<parameter name="printcontainer" type="Boolean" default-value="false" />
 		</parameters>
 	</block>
-	<block type="modules_photoalbum_album" icon="photoalbum">
+	<block type="modules_photoalbum_album" icon="photoalbum" dropModels="">
 		<parameters>
-			<parameter name="defaultcmpref" type="modules_photoalbum/album" min-occurs="0" max-occurs="1" />
-			<parameter name="defaultmode" type="String" default-value="standard" min-occurs="1" max-occurs="1" list-id="modules_photoalbum/defaultmode" />
+			<parameter name="defaultcmpref" type="modules_photoalbum/album" />
+			<parameter name="defaultmode" type="String" default-value="standard" min-occurs="1" list-id="modules_photoalbum/defaultmode" />
 			<parameter name="usediaporama" type="Boolean" default-value="true" />
 			<parameter name="diaporamaincludestext" type="Boolean" default-value="true" />
 			<parameter name="photoinselector" type="Integer" default-value="10" />
 		</parameters>
+	</block>
+	<block type="modules_photoalbum_AlbumSlideshow" icon="photoalbum" dropModels="[modules_photoalbum/album]">
+		<parameters>
+			<parameter name="slideshowHeight" type="Integer" default-value="320" required="true">
+				<constraints>min:100</constraints>
+			</parameter>
+			<parameter name="slideshowWidth" type="Integer">
+				<constraints>min:100</constraints>
+			</parameter>
+			<parameter name="imageHeight" type="Integer" default-value="250" required="true">
+				<constraints>min:40</constraints>
+			</parameter>
+			<parameter name="imageWidth" type="Integer">
+				<constraints>min:40</constraints>
+			</parameter>
+			<parameter name="showThumbnails" type="Boolean" default-value="true" />
+			<parameter name="thumbHeight" type="Integer" default-value="40" required="true">
+				<constraints>min:40</constraints>
+			</parameter>
+			<parameter name="thumbWidth" type="Integer">
+				<constraints>min:40</constraints>
+			</parameter>
+			<parameter name="autoplay" type="Boolean" default-value="true" />
+			<parameter name="lightbox" type="Boolean" default-value="true" />
+			<parameter name="transition" type="String" default-value="slide" list-id="modules_photoalbum/slideshowtransitions" required="true" />
+			<parameter name="showBlockTitle" type="Boolean" default-value="true" />
+		</parameters>
+		<xul>
+			<javascript>
+				<constructor><![CDATA[
+					var me = this;
+					var fields = this.getFields();
+					fields.showThumbnails.addEventListener('fieldChanged', function(event) { me.onShowThumbnailsChange(); }, true);
+					me.addEventListener('gridValuesUpdated', function(event) { me.onShowThumbnailsChange(); }, true);
+				]]></constructor>
+				<method name="onShowThumbnailsChange">
+					<body><![CDATA[
+						var fields = this.getFields();
+						var collapsed = (fields.showThumbnails.value != 'true');
+						this.getElementByAnonId('thumbHeight_cnt').collapsed = collapsed;
+						this.getElementByAnonId('thumbWidth_cnt').collapsed = collapsed;
+					]]></body>
+				</method>
+			</javascript>
+		</xul>
 	</block>
 </blocks>

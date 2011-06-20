@@ -11,7 +11,8 @@
 			<contextactions>
 				<contextaction name="edit" />
 				<contextaction name="addTopic" />
-				<contextaction name="openTreeNodeOrder" />		
+				<contextaction name="initLocalStructure" />
+				<contextaction name="openTreeNodeOrder" />
 			</contextactions>
 		</model>
 	
@@ -112,5 +113,6 @@
 		<action name="createAlbum" single="true" permission="Insert_album" icon="add" label="&amp;modules.photoalbum.bo.actions.Create-Album;" />
 		<action name="createPhoto" single="true" permission="Insert_photo" icon="add" label="&amp;modules.photoalbum.bo.actions.Create-Photo;" />
 		<action name="openTreeNodeOrder" single="true" permission="Order" icon="sort" label="&amp;modules.uixul.bo.actions.Set-children-order;" />
+		<action name="initLocalStructure" single="true" permission="InitStructure" icon="add" />
 	</actions>
 </perspective>
