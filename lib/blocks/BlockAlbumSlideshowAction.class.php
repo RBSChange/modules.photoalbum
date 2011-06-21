@@ -50,4 +50,20 @@ class photoalbum_BlockAlbumSlideshowAction extends website_BlockAction
 		
 		return website_BlockView::SUCCESS;
 	}
+
+	/**
+	 * @return array<String, String>
+	 */
+	public function getMetas()
+	{
+		$doc = $this->getDocumentParameter();
+		if ($doc instanceof photoalbum_persistentdocument_album && $doc->isPublished())
+		{
+			return array(
+				'label' => $doc->getLabel(), 
+				'description' => $doc->getSummary()
+			);
+		}
+		return array();
+	}
 }

@@ -29,6 +29,11 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 			}
 			return website_BlockView::NONE;
 		}
+		else if ($isOnDetailPage)
+		{
+			$this->getContext()->addCanonicalParam('topicId', null, 'photoalbum');
+		}
+		
 		$request->setAttribute('item', $album);
 		$request->setAttribute('isOnDetailPage', $isOnDetailPage);
 
@@ -73,6 +78,23 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 		{
 			$album->setCurrentPageIndex(intval($request->getParameter('currentpageindex', 0)));
 		}
+		
 		return website_BlockView::SUCCESS;
+	}
+
+	/**
+	 * @return array<String, String>
+	 */
+	public function getMetas()
+	{
+		$doc = $this->getDocumentParameter();
+		if ($doc instanceof photoalbum_persistentdocument_album && $doc->isPublished())
+		{
+			return array(
+				'label' => $doc->getLabel(), 
+				'description' => $doc->getSummary()
+			);
+		}
+		return array();
 	}
 }

@@ -5,6 +5,8 @@
 	<key id="label-help">libellé de l'album</key>
 	<key id="summary">description</key>
 	<key id="summary-help">description de l'album</key>
+	<key id="topic">rubriques</key>
+	<key id="topic-help">Rubriques dans lesquelles implanter cet album.</key>
 	<key id="startpublicationdate">début</key>
 	<key id="startpublicationdate-help">La date de début de publication indique la date à partir de laquelle l'album pourra être consulté par les internautes. Avant cette date, l'album ne sera pas consultable.</key>
 	<key id="endpublicationdate">fin</key>

@@ -5,4 +5,6 @@
 	<key id="printcontainer-help">Affiche le libellé de la rubrique en préambule</key>
 	<key id="itemsperpage">éléments par page</key>
 	<key id="itemsperpage-help">Spécifiez ici le nombre d'élément maximum à afficher par page.</key>
+	<key id="showdetailsincurrenttopic">page de détail dans la rubrique</key>
+	<key id="showdetailsincurrenttopic-help">Choisissez oui pour que les documents soient affichés dans la rubrique en cours, choisissez non pour qu'il soient affichés dans leur rubrique primaire.</key>
 </i18n>

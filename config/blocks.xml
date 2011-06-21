@@ -2,6 +2,7 @@
 <blocks>
 	<block type="modules_photoalbum_albumcontextuallist" icon="list-block">
 		<parameters>
+			<parameter name="showDetailsInCurrentTopic" type="Boolean" default-value="false" />
 			<parameter name="printcontainer" type="Boolean" default-value="false" />
 			<parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
 				<constraints>min:1;max:100</constraints>
@@ -16,6 +17,10 @@
 			<parameter name="diaporamaincludestext" type="Boolean" default-value="true" />
 			<parameter name="photoinselector" type="Integer" default-value="10" />
 		</parameters>
+		<metas>
+			<meta name="label" allow="title,description" />
+			<meta name="description" allow="description" />
+		</metas>
 	</block>
 	<block type="modules_photoalbum_AlbumSlideshow" icon="photoalbum" dropModels="[modules_photoalbum/album]">
 		<parameters>
@@ -43,6 +48,10 @@
 			<parameter name="transition" type="String" default-value="slide" list-id="modules_photoalbum/slideshowtransitions" required="true" />
 			<parameter name="showBlockTitle" type="Boolean" default-value="true" />
 		</parameters>
+		<metas>
+			<meta name="label" allow="title,description" />
+			<meta name="description" allow="description" />
+		</metas>
 		<xul>
 			<javascript>
 				<constructor><![CDATA[

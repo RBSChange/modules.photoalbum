@@ -15,20 +15,18 @@
 			<permission name="SavePermissions.*" />
 			<permission name="GetPreferencesDocument" />
 			<permission name="EditLocale" />
-			<permission name="Update.rootfolder" />
 			<permission name="InitStructure" />
 		</role>		
 		<role name="Writer" extend="Guest">
 			<permission name="Order" />
 			<permission name="LoadTags" />
-			<permission name="Move.*" />
 			<permission name="Load.*" />
 			<permission name="Rename.*" />
 			<permission name="PutInTrash.*" />
 			<permission name="Delete.*" />
 			<permission name="Insert.*" />
-			<permission name="Update.album" />
-			<permission name="Update.photo" />
+			<permission name="Move.*" />
+			<permission name="Update.*" />
 		</role>		
 		<role name="Translator" extend="Guest">
 			<permission name="Load.*" />
@@ -37,14 +35,10 @@
 		</role>		
 		<role name="Validator" extend="Guest">
 			<permission name="Load.*" />
-			<permission name="Activate.album" />
-			<permission name="Activate.photo" />
-			<permission name="Cancel.album" />
-			<permission name="Cancel.photo" />
-			<permission name="Deactivated.photo" />	
-			<permission name="Deactivated.album" />
-			<permission name="ReActivate.photo" />
-			<permission name="ReActivate.album" />
+			<permission name="Activate.*" />
+			<permission name="Cancel.*" />	
+			<permission name="Deactivated.*" />
+			<permission name="ReActivate.*" />
 		</role>
 		<role name="Guest" extend="User">
 			<permission name="Enabled" />

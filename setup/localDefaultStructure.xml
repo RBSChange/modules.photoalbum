@@ -13,7 +13,7 @@
 		</page>
 
 		<page label="Album" navigationVisibility="hidden" indexingstatus="false"
-			byTag="functional_photoalbum_album-detail">
+			byTag="functional_photoalbum_album-detail" metatitle="Album : {photoalbum_album.label}" description="{photoalbum_album.description}">
 			<changecontent for="content-block">
 				<changeblock type="modules_photoalbum_album" />
 			</changecontent>

@@ -4,6 +4,6 @@
 		<enabled>true</enabled>
 		<visible>true</visible>
 		<icon>photoalbum</icon>
-		<usetopic>true</usetopic>
+		<usetopic>false</usetopic>
 	</module>
 </config>

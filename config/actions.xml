@@ -1,18 +1,5 @@
 <?xml version="1.0"?>
 <actions>
-	<action name="openOrderPhoto">
-		<parameter name="listWidget" />
-		<body><![CDATA[
-			this.openOrderChildrenPanel(listWidget, null, ['modules_photoalbum/photo']);
-		]]></body>
-	</action>	
-	<action name="openOrderAlbum">
-		<parameter name="listWidget" />
-		<body><![CDATA[
-			this.openOrderChildrenPanel(listWidget, null, ['modules_photoalbum/album', 'modules_website/topic']);
-		]]></body>
-	</action>
-	
 	<action name="createAlbum">
 		<parameter name="listWidget"/>
 		<body><![CDATA[this.createDocumentEditor('modules_photoalbum_album', listWidget.getSelectedItems()[0].id);]]></body>
