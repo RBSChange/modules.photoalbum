@@ -3,6 +3,9 @@
 	<block type="modules_photoalbum_albumcontextuallist" icon="list-block">
 		<parameters>
 			<parameter name="printcontainer" type="Boolean" default-value="false" />
+			<parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
+				<constraints>min:1;max:100</constraints>
+			</parameter>
 		</parameters>
 	</block>
 	<block type="modules_photoalbum_album" icon="photoalbum" dropModels="">

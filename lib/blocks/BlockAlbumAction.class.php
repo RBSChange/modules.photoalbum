@@ -30,6 +30,7 @@ class photoalbum_BlockAlbumAction extends website_BlockAction
 			return website_BlockView::NONE;
 		}
 		$request->setAttribute('item', $album);
+		$request->setAttribute('isOnDetailPage', $isOnDetailPage);
 
 		$useDiaporama = $configuration->getUsediaporama();
 		$request->setAttribute('usediaporama', $useDiaporama);

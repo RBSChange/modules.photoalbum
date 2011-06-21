@@ -1,6 +1,6 @@
 <tal:block tal:define="photo album/getCurrentPhoto">
 	<img change:media="document photo/getMedia; format 'modules.photoalbum.frontoffice/photopreview'; zoom 'true'; id 'previewPhoto'" />
-	<h4 change:h="">${photo/getLabelAsHtml}</h4>
+	<h3 change:h="">${photo/getLabelAsHtml}</h3>
 	<p class="normal">${photo/getSummaryAsHtml}</p>
 	<p class="normal" tal:condition="photo/getMediahd"><span>${trans:m.photoalbum.frontoffice.downloadhd,lab,ucf}</span> <a change:download="document photo/getMediahd"></a></p>
 	<p class="normal" tal:condition="photo/getCopyright">${trans:m.photoalbum.frontoffice.copyright,lab,ucf} ${photo/getCopyright}</p>

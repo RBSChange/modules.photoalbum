@@ -1,4 +1,4 @@
-<h3 tal:condition="configuration/getPrintcontainer" change:h="">${container/getLabelAsHtml}</h3>
+<h2 tal:condition="configuration/getPrintcontainer" change:h="">${container/getLabelAsHtml}</h2>
 <ol class="photoalbum">
 	<tal:block tal:repeat="item paginator" change:include="module 'photoalbum'; template 'Photoalbum-Block-AlbumList-Success'; type 'html'; item item" />
 </ol>

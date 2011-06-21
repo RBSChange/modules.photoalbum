@@ -13,7 +13,7 @@
 // - thumbWidth: the thumbnails max width
 // - imageHeight: the image max height
 // - imageWidth: the image max width
-// - options: a list af Galleria options (cf: http://galleria.aino.se/docs/1.2/options/)
+// - options: a list of Galleria options (cf: http://galleria.aino.se/docs/1.2/options/)
 
 /**
  * @package photoalbum.lib.phptal

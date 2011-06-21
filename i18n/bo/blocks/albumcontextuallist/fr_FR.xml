@@ -3,4 +3,6 @@
 	<key id="title">liste des albums de la rubrique</key>
 	<key id="printcontainer">Afficher la rubrique</key>
 	<key id="printcontainer-help">Affiche le libellé de la rubrique en préambule</key>
+	<key id="itemsperpage">éléments par page</key>
+	<key id="itemsperpage-help">Spécifiez ici le nombre d'élément maximum à afficher par page.</key>
 </i18n>

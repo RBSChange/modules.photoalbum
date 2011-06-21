@@ -7,7 +7,7 @@
 	<website byTag="default_modules_website_default-website" template="webfactory/tplTwo">
 		<topic byLabel="Galerie de photos" id="gallery">
 			<execute method="setDocumentIdAttribute" />
-			<binding fileName="modules/event/setup/localDefaultStructure.xml" />
+			<binding fileName="modules/photoalbum/setup/localDefaultStructure.xml" />
 		</topic>
 	</website>
 

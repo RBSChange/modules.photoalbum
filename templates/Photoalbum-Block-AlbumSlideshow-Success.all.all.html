@@ -1,5 +1,8 @@
-<h2 change:h="" tal:condition="configuration/getShowBlockTitle">${album/getLabelAsHtml}</h2>
+<h2 change:h="" tal:condition="configuration/getShowBlockTitle">
+	<a tal:condition="not:isOnDetailPage" change:link="document album">${album/getLabelAsHtml}</a>
+	<tal:block tal:condition="isOnDetailPage">${album/getLabelAsHtml}</tal:block>
+</h2>
 
-<tal:block change:slideshow="docs album/getPublishedPhotos" mediaGetter="getMedia" descriptionGetter="getDescription" options="${options}"
+<tal:block change:slideshow="docs album/getPublishedPhotos" mediaGetter="getMedia" descriptionGetter="getSummaryAsHtml" options="${options}"
 	thumbHeight="${configuration/getThumbHeight}" thumbWidth="${configuration/getThumbWidth}"
 	imageHeight="${configuration/getImageHeight}" imageWidth="${configuration/getImageWidth}" class="${slideshowClass}" />

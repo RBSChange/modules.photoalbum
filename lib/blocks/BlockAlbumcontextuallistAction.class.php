@@ -8,21 +8,17 @@ class photoalbum_BlockAlbumcontextuallistAction extends website_BlockAction
 	 */
 	public function execute($request, $response)
 	{
-		// Get the parent topic
-		$ancestor = $this->getContext()->getPage()->getAncestorIds();
-        $topicId = f_util_ArrayUtils::lastElement($ancestor);
-
-        $container = DocumentHelper::getDocumentInstance($topicId);
+		$container = $this->getContext()->getParent();
 		$request->setAttribute('container', $container);
-
-		// Get the list of element for the container
-		$items = photoalbum_AlbumService::getInstance()->getPublishedByTopicId($topicId);
-
-		// Get the preference of module
-		$nbItemPerPage = 10;
-
-		// Set the paginator
-		$paginator = new paginator_Paginator('photoalbum', $request->getParameter(paginator_Paginator::PAGEINDEX_PARAMETER_NAME, 1), $items, $nbItemPerPage);
+		
+		$items = photoalbum_AlbumService::getInstance()->getPublishedByTopicId($container->getId());
+		$itemsPerPage = 10;
+		$page = $request->getParameter('page');
+		if (!is_numeric($page) || $page < 1 || $page > ceil(count($items) / $itemsPerPage))
+		{
+			$page = 1;
+		}
+		$paginator = new paginator_Paginator('photoalbum', $page, $items, $itemsPerPage);
 		$request->setAttribute('paginator', $paginator);
 
 		return website_BlockView::SUCCESS;

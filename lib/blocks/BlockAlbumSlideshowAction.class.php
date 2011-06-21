@@ -19,11 +19,17 @@ class photoalbum_BlockAlbumSlideshowAction extends website_BlockAction
 	
 		$configuration = $this->getConfiguration();	
 		$album = $this->getDocumentParameter();
-		if ($album === null)
+		$isOnDetailPage = TagService::getInstance()->hasTag($this->getContext()->getPersistentPage(), 'functional_photoalbum_album-detail');
+		if (!($album instanceof photoalbum_persistentdocument_album) || !$album->isPublished())
 		{
-			$album = $configuration->getDefaultcmpref();
+			if ($isOnDetailPage && !$this->isInBackofficePreview())
+			{
+				HttpController::getInstance()->redirect("website", "Error404");
+			}
+			return website_BlockView::NONE;
 		}
 		$request->setAttribute('album', $album);
+		$request->setAttribute('isOnDetailPage', $isOnDetailPage);
 		
 		$options = array('lightbox: true');
 		$options[] = 'height: ' . $configuration->getSlideshowHeight();
