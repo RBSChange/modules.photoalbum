@@ -45,7 +45,7 @@
 	</rootfolder>
 
 	<rootfolder module="photoalbum">
-		<linkedtopic refid="gallery">
+		<folder byLabel="Galeries d'exemple">
 			<album byLabel="Deux jours à tuer" summary="Antoine Méliot, la quarantaine, a tout pour être heureux : une belle épouse, deux enfants adorables, des amis sur lesquels il peut compter à tout instant, une jolie demeure dans les Yvelines et de l'argent. Mais un jour, il décide de tout saboter en un week-end : son bonheur, sa famille, ses amis. Que s'est-il passé chez cet homme pour qu'il change si étrangement de comportement ?">
 				<photo byLabel="Deux jours à tuer" mediarefid="photo1"
 					summary="Antoine Méliot, la quarantaine, a tout pour être heureux"
@@ -86,6 +86,6 @@
 					mediarefid="photo14" summary="Pierre Vaneck et Albert Dupontel"
 					copyright="Canal plus" />
 			</album>
-		</linkedtopic>
+		</folder>
 	</rootfolder>
 </script>
