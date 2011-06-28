@@ -4,7 +4,7 @@
 	<binding fileName="modules/photoalbum/persistentdocument/import/photoalbum_binding.xml" />
 	<binding fileName="modules/website/persistentdocument/import/website_binding.xml" />
 
-	<website byTag="default_modules_website_default-website" template="webfactory/tplTwo">
+	<website byTag="default_modules_website_default-website">
 		<topic byLabel="Galerie de photos" id="gallery">
 			<execute method="setDocumentIdAttribute" />
 			<binding fileName="modules/photoalbum/setup/localDefaultStructure.xml" />
@@ -46,7 +46,7 @@
 
 	<rootfolder module="photoalbum">
 		<folder byLabel="Galeries d'exemple">
-			<album byLabel="Deux jours à tuer" summary="Antoine Méliot, la quarantaine, a tout pour être heureux : une belle épouse, deux enfants adorables, des amis sur lesquels il peut compter à tout instant, une jolie demeure dans les Yvelines et de l'argent. Mais un jour, il décide de tout saboter en un week-end : son bonheur, sa famille, ses amis. Que s'est-il passé chez cet homme pour qu'il change si étrangement de comportement ?">
+			<album byLabel="Deux jours à tuer" topic-refids="gallery" summary="Antoine Méliot, la quarantaine, a tout pour être heureux : une belle épouse, deux enfants adorables, des amis sur lesquels il peut compter à tout instant, une jolie demeure dans les Yvelines et de l'argent. Mais un jour, il décide de tout saboter en un week-end : son bonheur, sa famille, ses amis. Que s'est-il passé chez cet homme pour qu'il change si étrangement de comportement ?">
 				<photo byLabel="Deux jours à tuer" mediarefid="photo1"
 					summary="Antoine Méliot, la quarantaine, a tout pour être heureux"
 					copyright="Canal plus" />
