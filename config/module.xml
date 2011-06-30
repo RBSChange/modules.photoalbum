@@ -4,6 +4,8 @@
 		<enabled>true</enabled>
 		<visible>true</visible>
 		<icon>photoalbum</icon>
-		<usetopic>false</usetopic>
 	</module>
+	<project>
+		<entry name="add-slideshow-styles">true</entry>
+	</project>
 </config>

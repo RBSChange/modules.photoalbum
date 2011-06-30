@@ -33,6 +33,10 @@ class PHPTAL_Php_Attribute_CHANGE_slideshow extends ChangeTalAttribute
 	{
 		$context = website_BlockController::getInstance()->getContext();
 		$context->addScript('modules.photoalbum.lib.js.galleria-classic');
+		if (Framework::getConfigurationValue('modules/photoalbum/add-slideshow-styles') == 'true')
+		{
+			$context->addStyle('modules.photoalbum.slideshow-default');
+		}
 		
 		$slideshowId = uniqid();
 		$class = self::getFromParams('class', $params);
