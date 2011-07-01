@@ -4,13 +4,16 @@
 		<model name="modules_generic/rootfolder">
 			<children>
 				<child model="modules_generic/folder" />
+				<child model="modules_photoalbum/album" />
 			</children>
 			<drops>
 				<drop model="modules_generic/folder" action="move" />
+				<drop model="modules_photoalbum/album" action="move" />
 			</drops>
 			<contextactions>
 				<contextaction name="edit" />
 				<contextaction name="createFolder" />
+				<contextaction name="createAlbum" />
 				<contextaction name="initLocalStructure" />
 				<contextaction name="openTreeNodeOrder" />
 			</contextactions>
