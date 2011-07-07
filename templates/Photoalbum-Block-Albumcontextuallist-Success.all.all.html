@@ -1,5 +1,8 @@
-<h2 tal:condition="configuration/getPrintcontainer" change:h="">${container/getLabelAsHtml}</h2>
-<ol class="photoalbum">
-	<tal:block tal:condition="configuration/getShowDetailsInCurrentTopic" tal:repeat="item paginator" change:include="module 'photoalbum'; template 'Photoalbum-Block-AlbumList-Success'; type 'html'; item item; topicId container/getId" />
-	<tal:block tal:condition="not: configuration/getShowDetailsInCurrentTopic" tal:repeat="item paginator" change:include="module 'photoalbum'; template 'Photoalbum-Block-AlbumList-Success'; type 'html'; item item" />
-</ol>
+<h1 tal:condition="configuration/getPrintcontainer" change:h="">${container/getLabelAsHtml}</h1>
+<ul class="document-list" tal:condition="paginator">
+	<li tal:repeat="doc paginator" class="${php: repeat.doc.odd ? 'odd' : 'even'}">
+		<tal:block tal:condition="configuration/getShowDetailsInCurrentTopic" change:include="module 'photoalbum'; template 'Photoalbum-Inc-Album-Item'; type 'html'; item doc; topicId container/getId" />
+		<tal:block tal:condition="not: configuration/getShowDetailsInCurrentTopic" change:include="module 'photoalbum'; template 'Photoalbum-Inc-Album-Item'; type 'html'; item doc;" />
+	</li>
+</ul>
+<tal:block change:paginator="paginator" />

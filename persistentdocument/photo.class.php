@@ -14,28 +14,7 @@ class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_
 		$indexedDoc->setText($this->getSummary() . "\n" . $this->getCopyright());
 		return $indexedDoc;
 	}
-
-	/**
-	 * @var boolean
-	 */
-	private $isCurrent = false;
-
-	/**
-	 * @param boolean $isCurrent
-	 */
-	public function setCurrent($isCurrent = true)
-	{
-		$this->isCurrent = ($isCurrent == true);
-	}
-
-	/**
-	 * @return boolean
-	 */
-	public function isCurrent()
-	{
-		return $this->isCurrent;
-	}
-
+	
 	/**
 	 * @return media_persistentdocument_media
 	 */
@@ -65,7 +44,38 @@ class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_
 	}
 
 	/**
-	 * @return string
+	 * @return  photoalbum_persistentdocument_album
+	 */
+	public function getAlbum()
+	{
+		return TreeService::getInstance()->getParentDocument($this);
+	}
+	
+	// Deprecated.
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	private $isCurrent = false;
+
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function setCurrent($isCurrent = true)
+	{
+		$this->isCurrent = ($isCurrent == true);
+	}
+
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function isCurrent()
+	{
+		return $this->isCurrent;
+	}
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
 	 */
 	public function getSelectorUrl()
 	{
@@ -74,7 +84,7 @@ class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_
 	}
 
 	/**
-	 * @return string
+	 * @deprecated (will be removed in 4.0)
 	 */
 	public function getPreviewUrl()
 	{
@@ -83,19 +93,11 @@ class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_
 	}
 
 	/**
-	 * @return string
+	 * @deprecated (will be removed in 4.0)
 	 */
 	public function getDiaporamaUrl()
 	{
 		$media = $this->getMedia();
 		return MediaHelper::getPublicFormatedUrl($media, "modules.photoalbum.frontoffice/diaporama");
-	}
-
-	/**
-	 * @return  photoalbum_persistentdocument_album
-	 */
-	public function getAlbum()
-	{
-		return TreeService::getInstance()->getParentDocument($this);
 	}
 }

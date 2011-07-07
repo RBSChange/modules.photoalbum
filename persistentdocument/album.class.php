@@ -17,49 +17,9 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 	}
 	
 	/**
-	 * @var photoalbum_persistentdocument_photo
-	 */
-	private $previousPhoto;
-	
-	/**
-	 * @var photoalbum_persistentdocument_photo
-	 */
-	private $nextPhoto;
-
-	/**
-	 * @var Integer
-	 */
-	private $previousPhotoPageIndex;
-	
-	/**
-	 * @var Integer
-	 */
-	private $nextPhotoPageIndex;
-	
-	/**
-	 * @var media_persistentdocument_media
-	 */
-	private $currentThumbnail = null;
-
-	/**
 	 * @var photoalbum_persistentdocument_photo[]
 	 */
 	private $publishedPhotos = null;
-
-	/**
-	 * @var integer
-	 */
-	private $currentphotoIndex = 0;
-
-	/**
-	 * @var integer
-	 */
-	private $currentPageIndex = 0;
-
-	/**
-	 * @var integer
-	 */
-	private $pageSize = 10;
 
 	/**
 	 * @return photoalbum_persistentdocument_photo[]
@@ -74,6 +34,11 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 		}
 		return $this->publishedPhotos;
 	}
+	
+	/**
+	 * @var media_persistentdocument_media
+	 */
+	private $thumbnail = null;
 
 	/**
 	 * @return media_persistentdocument_media
@@ -81,24 +46,31 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 	public function getThumbnail()
 	{
 		$this->checkLoaded();
-		if ($this->currentThumbnail === null)
+		if ($this->thumbnail === null)
 		{
 			$photos = $this->getPublishedPhotos();
 			if (count($photos) > 0)
 			{
 				$photo = $photos[0];
-				$this->currentThumbnail = $photo->getPopulatedThumbnail();
+				$this->thumbnail = $photo->getPopulatedThumbnail();
 			}
 			else
 			{
-				$this->currentThumbnail = false;
+				$this->thumbnail = false;
 			}
 		}
-		return $this->currentThumbnail === false ? NULL : $this->currentThumbnail;
+		return $this->thumbnail === false ? null : $this->thumbnail;
 	}
 	
+	// Deprecated.
+	
 	/**
-	 * @param integer $pageSize
+	 * @deprecated (will be removed in 4.0)
+	 */
+	private $pageSize = 10;
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
 	 */
 	public function setPageSize($pageSize)
 	{
@@ -109,15 +81,15 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 	}
 
 	/**
-	 * @return integer
+	 * @deprecated (will be removed in 4.0)
 	 */
 	public function getPageSize()
 	{
 		return $this->pageSize;
 	}
-
+	
 	/**
-	 * @param integer $currentphotoId
+	 * @deprecated (will be removed in 4.0)
 	 */
 	public function setCurrentPhotoId($currentphotoId)
 	{
@@ -134,9 +106,14 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 
 		$this->setCurrentPhotoIndex(0);
 	}
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	private $currentPageIndex = 0;
 
 	/**
-	 * @param integer $pageIndex
+	 * @deprecated (will be removed in 4.0)
 	 */
 	public function setCurrentPageIndex($pageIndex)
 	{
@@ -150,116 +127,20 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 	}
 
 	/**
-	 * @return integer
+	 * @deprecated (will be removed in 4.0)
 	 */
 	public function getCurrentPageIndex()
 	{
 		return $this->currentPageIndex;
 	}
-
+	
 	/**
-	 * @return photoalbum_persistentdocument_photo
+	 * @deprecated (will be removed in 4.0)
 	 */
-	public function getCurrentPhoto()
-	{
-		$photos = $this->getPublishedPhotos();
-		if (array_key_exists($this->currentphotoIndex, $photos))
-		{
-			return $photos[$this->currentphotoIndex];
-		}
-		return null;
-	}
-
+	private $currentphotoIndex = 0;
+	
 	/**
-	 * @return photoalbum_persistentdocument_photo
-	 */
-	public function getPreviousPhoto()
-	{
-		return $this->previousPhoto;
-	}
-
-	/**
-	 * @return integer
-	 */
-	public function getPreviousPhotoPageIndex()
-	{
-		return $this->previousPhotoPageIndex;
-	}
-
-	/**
-	 * @return integer
-	 */
-	public function getNextPhotoPageIndex()
-	{
-		return $this->nextPhotoPageIndex;
-	}
-
-	/**
-	 * @return photoalbum_persistentdocument_photo
-	 */
-	public function getNextPhoto()
-	{
-		return $this->nextPhoto;
-	}
-
-	/**
-	 * @return photoalbum_persistentdocument_photo[]
-	 */
-	public function getPhotosSelector()
-	{
-		$selector = array();
-		$photos = $this->getPublishedPhotos();
-
-		$startIndex = $this->currentPageIndex * $this->pageSize;
-		$endIndex = $startIndex + $this->pageSize;
-		if ($endIndex > count($photos))
-		{
-			$endIndex = count($photos);
-		}
-		while ($startIndex < $endIndex)
-		{
-			$selector[] = $photos[$startIndex];
-			$startIndex++;
-		}
-		return $selector;
-	}
-
-	/**
-	 * @return integer 
-	 */
-	public function getPagePreviousSelector()
-	{
-		return $this->currentPageIndex - 1;
-	}
-
-	/**
-	 * @return boolean
-	 */
-	public function hasPagePreviousSelector()
-	{
-		return $this->getPagePreviousSelector() >= 0;
-	}
-
-	/**
-	 * @return integer
-	 */
-	public function getPageNextSelector()
-	{
-		return $this->currentPageIndex + 1;
-	}
-
-	/**
-	 * @return boolean
-	 */
-	public function hasPageNextSelector()
-	{
-		return ($this->getPageNextSelector() * $this->pageSize) < count($this->getPublishedPhotos());
-	}
-
-	// private methods
-
-	/**
-	 * @param Integer $photoIndex
+	 * @deprecated (will be removed in 4.0)
 	 */
 	private function setCurrentPhotoIndex($photoIndex)
 	{
@@ -284,5 +165,124 @@ class photoalbum_persistentdocument_album extends photoalbum_persistentdocument_
 			$this->nextPhotoPageIndex = floor(($photoIndex+1) / $this->pageSize);
 			Framework::debug("NEXT PAGE INDEX ".$this->nextPhotoPageIndex." ".($photoIndex+1)." ".$this->pageSize);
 		}
+	}
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function getCurrentPhoto()
+	{
+		$photos = $this->getPublishedPhotos();
+		if (array_key_exists($this->currentphotoIndex, $photos))
+		{
+			return $photos[$this->currentphotoIndex];
+		}
+		return null;
+	}
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	private $previousPhoto;
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function getPreviousPhoto()
+	{
+		return $this->previousPhoto;
+	}
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	private $nextPhoto;
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function getPreviousPhotoPageIndex()
+	{
+		return $this->previousPhotoPageIndex;
+	}
+
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	private $previousPhotoPageIndex;
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function getNextPhotoPageIndex()
+	{
+		return $this->nextPhotoPageIndex;
+	}
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	private $nextPhotoPageIndex;
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function getNextPhoto()
+	{
+		return $this->nextPhoto;
+	}
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function getPhotosSelector()
+	{
+		$selector = array();
+		$photos = $this->getPublishedPhotos();
+
+		$startIndex = $this->currentPageIndex * $this->pageSize;
+		$endIndex = $startIndex + $this->pageSize;
+		if ($endIndex > count($photos))
+		{
+			$endIndex = count($photos);
+		}
+		while ($startIndex < $endIndex)
+		{
+			$selector[] = $photos[$startIndex];
+			$startIndex++;
+		}
+		return $selector;
+	}
+	
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function getPagePreviousSelector()
+	{
+		return $this->currentPageIndex - 1;
+	}
+
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function hasPagePreviousSelector()
+	{
+		return $this->getPagePreviousSelector() >= 0;
+	}
+
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function getPageNextSelector()
+	{
+		return $this->currentPageIndex + 1;
+	}
+
+	/**
+	 * @deprecated (will be removed in 4.0)
+	 */
+	public function hasPageNextSelector()
+	{
+		return ($this->getPageNextSelector() * $this->pageSize) < count($this->getPublishedPhotos());
 	}
 }

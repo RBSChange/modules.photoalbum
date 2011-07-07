@@ -1,7 +1,13 @@
-<h2 change:h="" tal:condition="configuration/getShowBlockTitle">
+<ul class="mini-navigation" tal:condition="isOnDetailPage">
+	<li>
+		<a change:link="tag functional_photoalbum_album-list">${trans:m.photoalbum.frontoffice.contextual-albums,ucf}</a>
+	</li>
+</ul>
+
+<h1 change:h="" tal:condition="configuration/getShowBlockTitle">
 	<a tal:condition="not:isOnDetailPage" change:link="document album">${album/getLabelAsHtml}</a>
 	<tal:block tal:condition="isOnDetailPage">${album/getLabelAsHtml}</tal:block>
-</h2>
+</h1>
 
 <tal:block change:slideshow="docs album/getPublishedPhotos" mediaGetter="getMedia" descriptionGetter="getSummaryAsHtml" options="${options}"
 	thumbHeight="${configuration/getThumbHeight}" thumbWidth="${configuration/getThumbWidth}"

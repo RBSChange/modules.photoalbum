@@ -1,0 +1,6 @@
+<h2 change:h=""><a change:link="document item; photoalbumParam[topicId] topicId">${item/getLabelAsHtml}</a></h2>
+<a change:link="document item; photoalbumParam[topicId] topicId" title="${item/getLabelAsHtml}">
+	<img change:media="document item/getThumbnail; class 'float-left'; format 'modules.photoalbum.frontoffice/albumthumbnail'; lang item/getThumbnail/getLang; alt item/getLabelAsHtml" />
+</a>
+<div tal:condition="item/getSummary">${item/getSummaryAsHtml}</div>
+<div class="cleaner"></div>

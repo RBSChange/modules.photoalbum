@@ -9,19 +9,6 @@
 			</parameter>
 		</parameters>
 	</block>
-	<block type="modules_photoalbum_album" icon="photoalbum" dropModels="">
-		<parameters>
-			<parameter name="defaultcmpref" type="modules_photoalbum/album" />
-			<parameter name="defaultmode" type="String" default-value="standard" min-occurs="1" list-id="modules_photoalbum/defaultmode" />
-			<parameter name="usediaporama" type="Boolean" default-value="true" />
-			<parameter name="diaporamaincludestext" type="Boolean" default-value="true" />
-			<parameter name="photoinselector" type="Integer" default-value="10" />
-		</parameters>
-		<metas>
-			<meta name="label" allow="title,description" />
-			<meta name="description" allow="description" />
-		</metas>
-	</block>
 	<block type="modules_photoalbum_AlbumSlideshow" icon="photoalbum" dropModels="[modules_photoalbum/album]">
 		<parameters>
 			<parameter name="slideshowHeight" type="Integer" default-value="320" required="true">

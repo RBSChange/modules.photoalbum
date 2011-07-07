@@ -152,10 +152,9 @@ class photoalbum_AlbumService extends f_persistentdocument_DocumentService
 	{
 		if ($treeType == 'wlist')
 		{
-			$photo = $document->getCurrentPhoto();
-			if ($photo !== null)
+			$media = $document->getThumbnail();
+			if ($media !== null)
 			{
-		    	$media = $photo->getThumbnailMedia();
 		    	$nodeAttributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
 			}
 		}

@@ -12,12 +12,14 @@ class photoalbum_BlockAlbumcontextuallistAction extends website_BlockAction
 		$request->setAttribute('container', $container);
 		
 		$items = photoalbum_AlbumService::getInstance()->getPublishedByTopicId($container->getId());
-		$itemsPerPage = 10;
+		$itemsPerPage = $this->getConfiguration()->getItemsPerPage();
 		$page = $request->getParameter('page');
 		if (!is_numeric($page) || $page < 1 || $page > ceil(count($items) / $itemsPerPage))
 		{
 			$page = 1;
 		}
+		$this->getContext()->addCanonicalParam('page', $page > 1 ? $page : null, $this->getModuleName());
+		
 		$paginator = new paginator_Paginator('photoalbum', $page, $items, $itemsPerPage);
 		$request->setAttribute('paginator', $paginator);
 
