@@ -18,7 +18,7 @@
 /**
  * @package photoalbum.lib.phptal
  */
-class PHPTAL_Php_Attribute_CHANGE_slideshow extends ChangeTalAttribute 
+class PHPTAL_Php_Attribute_CHANGE_Slideshow extends ChangeTalAttribute 
 {
 	protected function evaluateAll()
 	{
