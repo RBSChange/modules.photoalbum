@@ -120,7 +120,7 @@ class photoalbum_AlbumService extends f_persistentdocument_DocumentService
 	 */
 	public function getDisplayPage($document)
 	{
-		$request = HttpController::getInstance()->getContext()->getRequest();
+		$request = change_Controller::getInstance()->getContext()->getRequest();
 		if ($request->hasModuleParameter('photoalbum', 'topicId'))
 		{
 			$topicId = $request->getModuleParameter('photoalbum', 'topicId');
