@@ -1,4 +1,4 @@
-<h1 tal:condition="configuration/getPrintcontainer" change:h="">${container/getLabelAsHtml}</h1>
+<h1 tal:condition="configuration/getPrintcontainer" change:h="">${structure container/getLabelAsHtml}</h1>
 <ul class="document-list" tal:condition="paginator">
 	<li tal:repeat="doc paginator" class="${php: repeat.doc.odd ? 'odd' : 'even'}">
 		<tal:block tal:condition="configuration/getShowDetailsInCurrentTopic" change:include="module 'photoalbum'; template 'Photoalbum-Inc-Album-Item'; type 'html'; item doc; topicId container/getId" />

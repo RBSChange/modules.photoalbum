@@ -5,10 +5,10 @@
 </ul>
 
 <h1 change:h="" tal:condition="configuration/getShowBlockTitle">
-	<a tal:condition="not:isOnDetailPage" change:link="document album">${album/getLabelAsHtml}</a>
-	<tal:block tal:condition="isOnDetailPage">${album/getLabelAsHtml}</tal:block>
+	<a tal:condition="not:isOnDetailPage" change:link="document album">${structure album/getLabelAsHtml}</a>
+	<tal:block tal:condition="isOnDetailPage">${structure album/getLabelAsHtml}</tal:block>
 </h1>
 
-<tal:block change:slideshow="docs album/getPublishedPhotos" mediaGetter="getMedia" descriptionGetter="getSummaryAsHtml" options="${options}"
+<tal:block change:slideshow="docs album/getPublishedPhotos" mediaGetter="getMedia" descriptionGetter="structure getSummaryAsHtml" options="${options}"
 	thumbHeight="${configuration/getThumbHeight}" thumbWidth="${configuration/getThumbWidth}"
 	imageHeight="${configuration/getImageHeight}" imageWidth="${configuration/getImageWidth}" class="${slideshowClass}" />
