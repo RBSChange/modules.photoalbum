@@ -1,20 +1,6 @@
 <?php
-class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_photobase implements indexer_IndexableDocument
+class photoalbum_persistentdocument_photo extends photoalbum_persistentdocument_photobase
 {
-	/**
-	 * @return indexer_IndexedDocument
-	 */
-	public function getIndexedDocument()
-	{
-		$indexedDoc = new indexer_IndexedDocument();
-		$indexedDoc->setId($this->getId());
-		$indexedDoc->setDocumentModel('modules_photoalbum/photo');
-		$indexedDoc->setLabel($this->getLabel());
-		$indexedDoc->setLang(RequestContext::getInstance()->getLang());
-		$indexedDoc->setText($this->getSummary() . "\n" . $this->getCopyright());
-		return $indexedDoc;
-	}
-	
 	/**
 	 * @return media_persistentdocument_media
 	 */
