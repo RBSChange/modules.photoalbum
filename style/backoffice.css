@@ -1,6 +1,0 @@
-treechildren::-moz-tree-image(modules_photoalbum_album){
-	list-style-image: url(/changeicons/small/photoalbum.png) ;
-}
-treechildren::-moz-tree-image(modules_photoalbum_photo){
-	list-style-image: url(/changeicons/small/photo.png) ;
-}
