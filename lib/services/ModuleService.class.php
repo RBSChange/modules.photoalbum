@@ -33,7 +33,7 @@ class photoalbum_ModuleService extends ModuleBaseService
 		// Check container.
 		if (!$container instanceof website_persistentdocument_topic)
 		{
-			throw new BaseException('Invalid topic', 'modules.photoalbum.bo.general.Invalid-topic');
+			throw new BaseException('Invalid topic', 'm.website.bo.actions.invalid-topic');
 		}
 		
 		$query = website_PageService::getInstance()->createQuery()->add(Restrictions::orExp(
