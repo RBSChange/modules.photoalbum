@@ -1,61 +1,62 @@
 <?xml version="1.0"?>
 <blocks>
-	<block type="modules_photoalbum_albumcontextuallist" icon="list-block">
-		<parameters>
-			<parameter name="showDetailsInCurrentTopic" type="Boolean" default-value="false" />
-			<parameter name="printcontainer" type="Boolean" default-value="false" />
-			<parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
-				<constraints>min:1;max:100</constraints>
-			</parameter>
-		</parameters>
-	</block>
-	<block type="modules_photoalbum_AlbumSlideshow" icon="photoalbum" dropModels="[modules_photoalbum/album]">
-		<parameters>
-			<parameter name="slideshowHeight" type="Integer" default-value="320" required="true">
-				<constraints>min:100</constraints>
-			</parameter>
-			<parameter name="slideshowWidth" type="Integer">
-				<constraints>min:100</constraints>
-			</parameter>
-			<parameter name="imageHeight" type="Integer" default-value="250" required="true">
-				<constraints>min:40</constraints>
-			</parameter>
-			<parameter name="imageWidth" type="Integer">
-				<constraints>min:40</constraints>
-			</parameter>
-			<parameter name="showThumbnails" type="Boolean" default-value="true" />
-			<parameter name="thumbHeight" type="Integer" default-value="40" required="true">
-				<constraints>min:40</constraints>
-			</parameter>
-			<parameter name="thumbWidth" type="Integer">
-				<constraints>min:40</constraints>
-			</parameter>
-			<parameter name="autoplay" type="Boolean" default-value="true" />
-			<parameter name="lightbox" type="Boolean" default-value="true" />
-			<parameter name="transition" type="String" default-value="slide" list-id="modules_photoalbum/slideshowtransitions" required="true" />
-			<parameter name="showBlockTitle" type="Boolean" default-value="true" />
-		</parameters>
-		<metas>
-			<meta name="label" allow="title,description" />
-			<meta name="description" allow="description" />
-		</metas>
-		<xul>
-			<javascript>
-				<constructor><![CDATA[
+  <block type="modules_photoalbum_albumcontextuallist" icon="list-block">
+    <parameters>
+      <parameter name="showDetailsInCurrentTopic" type="Boolean" default-value="false"/>
+      <parameter name="printcontainer" type="Boolean" default-value="false"/>
+      <parameter name="itemsPerPage" type="Integer" min-occurs="1" default-value="10">
+        <constraint name="min" min="1"/>
+        <constraint name="max" max="100"/>
+      </parameter>
+    </parameters>
+  </block>
+  <block type="modules_photoalbum_AlbumSlideshow" icon="photoalbum" dropModels="[modules_photoalbum/album]">
+    <parameters>
+      <parameter name="slideshowHeight" type="Integer" default-value="320" required="true">
+        <constraint name="min" min="100"/>
+      </parameter>
+      <parameter name="slideshowWidth" type="Integer">
+        <constraint name="min" min="100"/>
+      </parameter>
+      <parameter name="imageHeight" type="Integer" default-value="250" required="true">
+        <constraint name="min" min="40"/>
+      </parameter>
+      <parameter name="imageWidth" type="Integer">
+        <constraint name="min" min="40"/>
+      </parameter>
+      <parameter name="showThumbnails" type="Boolean" default-value="true"/>
+      <parameter name="thumbHeight" type="Integer" default-value="40" required="true">
+        <constraint name="min" min="40"/>
+      </parameter>
+      <parameter name="thumbWidth" type="Integer">
+        <constraint name="min" min="40"/>
+      </parameter>
+      <parameter name="autoplay" type="Boolean" default-value="true"/>
+      <parameter name="lightbox" type="Boolean" default-value="true"/>
+      <parameter name="transition" type="String" default-value="slide" list-id="modules_photoalbum/slideshowtransitions" required="true"/>
+      <parameter name="showBlockTitle" type="Boolean" default-value="true"/>
+    </parameters>
+    <metas>
+      <meta name="label" allow="title,description"/>
+      <meta name="description" allow="description"/>
+    </metas>
+    <xul>
+      <javascript>
+        <constructor><![CDATA[
 					var me = this;
 					var fields = this.getFields();
 					fields.showThumbnails.addEventListener('fieldChanged', function(event) { me.onShowThumbnailsChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowThumbnailsChange(); }, true);
 				]]></constructor>
-				<method name="onShowThumbnailsChange">
-					<body><![CDATA[
+        <method name="onShowThumbnailsChange">
+          <body><![CDATA[
 						var fields = this.getFields();
 						var collapsed = (fields.showThumbnails.value != 'true');
 						this.getElementByAnonId('thumbHeight_cnt').collapsed = collapsed;
 						this.getElementByAnonId('thumbWidth_cnt').collapsed = collapsed;
 					]]></body>
-				</method>
-			</javascript>
-		</xul>
-	</block>
+        </method>
+      </javascript>
+    </xul>
+  </block>
 </blocks>
