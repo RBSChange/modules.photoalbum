@@ -1,0 +1,20 @@
+.albumthumbnail{
+	max-width: 128px;
+	max-height: 128px;
+}
+
+/* @deprecated used by deprecated methodes */
+.photopreview{
+	max-width: 350px;
+	max-height: 350px;
+}
+/* @deprecated used by deprecated methodes */
+.photoselector{
+	max-width: 64px;
+	max-height: 64px;
+}
+/* @deprecated used by deprecated methodes */
+.diaporama{
+	max-width: 700px;
+	max-height: 700px;
+}
