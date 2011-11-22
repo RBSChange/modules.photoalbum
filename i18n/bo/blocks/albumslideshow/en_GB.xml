@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.bo.blocks.albumslideshow" lcid="en_GB">
+  <key id="autoplay">automatic slide show</key>
+  <key id="imageheight">maximum height of images</key>
+  <key id="imagewidth">maximum width of images</key>
+  <key id="lightbox">activate zoom</key>
+  <key id="showblocktitle">display the title</key>
+  <key id="showthumbnails">display the thumbnails</key>
+  <key id="slideshowwidth">slide show width</key>
+  <key id="slideshowheight">slide show height</key>
+  <key id="thumbheight">maximum height of the thumbnails</key>
+  <key id="thumbwidth">maximum width of the thumbnails</key>
+  <key id="title">album slide show</key>
+  <key id="transition">transition effect</key>
+</i18n>
