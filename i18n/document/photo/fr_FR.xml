@@ -8,9 +8,9 @@
 	<key id="media">image</key>
 	<key id="media-help">image de la photo</key>
 	<key id="thumbnail">miniature</key>
-	<key id="thumbnail-help">miniature de la photo utilisée pour les apercus</key>
+	<key id="thumbnail-help">miniature de la photo utilisée pour les aperçus</key>
 	<key id="mediahd">image haute définition</key>
-	<key id="mediahd-help">image haute définition de la photo pour impression, fond d'écran ...</key>
+	<key id="mediahd-help">image haute définition de la photo pour impression, fond d'écran...</key>
 	<key id="copyright">copyright</key>
 	<key id="copyright-help">copyright de la photo</key>
 	<key id="startpublicationdate">début</key>
