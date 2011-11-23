@@ -34,7 +34,7 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 	{
 		return $this->pp->createQuery('modules_photoalbum/photo');
 	}
-	
+
 	/**
 	 * @param website_UrlRewritingService $urlRewritingService
 	 * @param photoalbum_persistentdocument_photo $document
@@ -48,14 +48,14 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 		if (!isset($parameters['photoalbumParam']))
 		{
 			$parameters['photoalbumParam'] = array('currentphoto' => $document->getId());
-		} 
+		}
 		else
 		{
 			$parameters['photoalbumParam']['currentphoto']  = $document->getId();
 		}
 		return $urlRewritingService->getDocumentLinkForWebsite($document->getAlbum(), $website, $lang, $parameters);
 	}
-	
+
 	/**
 	 * @param photoalbum_persistentdocument_photo $document
 	 * @param Integer $parentNodeId Parent node ID where to save the document (optionnal => can be null !).
@@ -63,54 +63,30 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 	 */
 	protected function preSave($document, $parentNodeId = null)
 	{
-	    $mediaService = media_MediaService::getInstance();
-	    
-	    $tmpMedia = $document->getMedia();
-        if ($tmpMedia instanceof media_persistentdocument_tmpfile ) 
-        {
-          $document->setMedia(null);  
-          $document->setMedia($mediaService->importFromTempFile($tmpMedia));
-        }
-        $this->updateMediaInfos($document, $document->getMedia());
-        
-        $tmpMedia = $document->getThumbnail();
-	    if ($tmpMedia instanceof media_persistentdocument_tmpfile ) 
-        {
-          $document->setThumbnail(null);
-          $document->setThumbnail($mediaService->importFromTempFile($tmpMedia));
-        } 
-        
-        $this->updateMediaInfos($document, $document->getThumbnail());
+		$mediaService = media_MediaService::getInstance();
+		 
+		$tmpMedia = $document->getMedia();
+		if ($tmpMedia instanceof media_persistentdocument_tmpfile )
+		{
+			$document->setMedia(null);
+			$document->setMedia($mediaService->importFromTempFile($tmpMedia));
+		}
 
-        $tmpMedia = $document->getMediahd();
-		if ($tmpMedia instanceof media_persistentdocument_tmpfile ) 
-        {
-            $document->setMediahd(null);
-            $document->setMediahd($mediaService->importFromTempFile($tmpMedia));
-        }
-        $this->updateMediaInfos($document, $document->getMediahd());
+		$tmpMedia = $document->getThumbnail();
+		if ($tmpMedia instanceof media_persistentdocument_tmpfile )
+		{
+			$document->setThumbnail(null);
+			$document->setThumbnail($mediaService->importFromTempFile($tmpMedia));
+		}
+		
+		$tmpMedia = $document->getMediahd();
+		if ($tmpMedia instanceof media_persistentdocument_tmpfile )
+		{
+			$document->setMediahd(null);
+			$document->setMediahd($mediaService->importFromTempFile($tmpMedia));
+		}
 	}
 
-	/**
-	 * Mise à jour des informations des medias attaché à la 
-	 *
-	 * @param photoalbum_persistentdocument_photo $document
-	 * @param media_persistentdocument_media $media
-	 */
-	private function updateMediaInfos($document, $media)
-	{
-	    if ($media instanceof media_persistentdocument_media && $media->isContextLangAvailable())
-        {
-            $media->setLabel($document->getLabel());
-            $media->setTitle($document->getLabel());
-            $media->setDescription($document->getSummary());
-            if ($media->isModified())
-            {
-                 $media->save();   
-            }
-        }	    
-	}
-	
 	/**
 	 * Methode à surcharger pour effectuer des post traitement apres le changement de status du document
 	 * utiliser $document->getPublicationstatus() pour retrouver le nouveau status du document.
@@ -121,11 +97,11 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 	 */
 	protected function publicationStatusChanged($document, $oldPublicationStatus, $params)
 	{
-	    $album = $this->getParentOf($document);
-	    if ($album instanceof photoalbum_persistentdocument_album)
-	    {
-	        $album->getDocumentService()->publishIfPossible($album->getId());
-	    }
+		$album = $this->getParentOf($document);
+		if ($album instanceof photoalbum_persistentdocument_album)
+		{
+			$album->getDocumentService()->publishIfPossible($album->getId());
+		}
 	}
 
 	/**
@@ -133,16 +109,16 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 	 * @param string $moduleName
 	 * @param string $treeType
 	 * @param array<string, string> $nodeAttributes
-	 */	
+	 */
 	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
 	{
 		if ($treeType == 'wlist')
 		{
-	    	$media = $document->getThumbnailMedia();
-	    	$nodeAttributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
+			$media = $document->getThumbnailMedia();
+			$nodeAttributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
 		}
 	}
-	
+
 	/**
 	 * @param photoalbum_persistentdocument_photo $document
 	 * @param string $forModuleName
@@ -159,7 +135,7 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 		try
 		{
 			$rc->beginI18nWork($lang);
-			
+
 			$info = $media->getCommonInfo();
 			$data['content'] = array(
 				'mimetype' => $media->getMimetype(),
@@ -173,11 +149,11 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 				$data['content']['width'] = $info['width'].' '.$pixelsLabel;
 				$data['content']['height'] = $info['height'].' '.$pixelsLabel;
 				$data['content']['previewimgurl']['image'] = LinkHelper::getUIActionLink('media', 'BoDisplay')
-					->setQueryParameter('cmpref', $media->getId())
-					->setQueryParameter('max-height', 128)
-					->setQueryParameter('max-width', 128)
-					->setQueryParameter('lang', $lang)
-					->setQueryParameter('time', date_Calendar::now()->getTimestamp())->getUrl();
+				->setQueryParameter('cmpref', $media->getId())
+				->setQueryParameter('max-height', 128)
+				->setQueryParameter('max-width', 128)
+				->setQueryParameter('lang', $lang)
+				->setQueryParameter('time', date_Calendar::now()->getTimestamp())->getUrl();
 			}
 			else
 			{
@@ -192,5 +168,24 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 		}
 
 		return $data;
+	}
+
+	// Deprecated.
+
+	/**
+	 * @deprecated with no replacement
+	 */
+	private function updateMediaInfos($document, $media)
+	{
+		if ($media instanceof media_persistentdocument_media && $media->isContextLangAvailable())
+		{
+			$media->setLabel($document->getLabel());
+			$media->setTitle($document->getLabel());
+			$media->setDescription($document->getSummary());
+			if ($media->isModified())
+			{
+				$media->save();
+			}
+		}
 	}
 }
