@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.document.photo" lcid="en_GB">
-	<key id="document-name">photo</key>
-	<key id="label">photo label</key>
-	<key id="label-help">photo label</key>
-	<key id="summary">summary</key>
-	<key id="thumbnail">thumbnail</key>
-	<key id="thumbnail-help">thumbnail-help</key>
-	<key id="startpublicationdate">start</key>
-	<key id="endpublicationdate">end</key>
+  <key id="document-name">photo</key>
+  <key id="label">photo label</key>
+  <key id="label-help">photo label</key>
+  <key id="summary">description</key>
+  <key id="thumbnail">thumbnail</key>
+  <key id="thumbnail-help">This is the thumbnail of the photo to be used for previews.</key>
+  <key id="startpublicationdate">start</key>
+  <key id="endpublicationdate">end</key>
+  <key id="copyright">copyright</key>
+  <key id="copyright-help">This is the copyright of the photo.</key>
+  <key id="endpublicationdate-help">The publication end date indicates the date until which the photo may be viewed by visitors. After this date, the photo will no longer be available for viewing.</key>
+  <key id="media">image</key>
+  <key id="media-help">This is the image of the photo.</key>
+  <key id="mediahd">high-definition image</key>
+  <key id="mediahd-help">This is the high-definition image of the photo to be used for printing, as a desktop background, …</key>
+  <key id="startpublicationdate-help">The publication start date indicates the date from which the photo may be viewed by visitors. Before this date, the photo will not be available for viewing.</key>
+  <key id="summary-help">This is the description of the photo.</key>
 </i18n>

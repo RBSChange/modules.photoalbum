@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<i18n baseKey="m.photoalbum.bo.actions" lcid="en_GB">
+  <key id="create-album">create an album</key>
+  <key id="create-photo">add a photograph</key>
+  <key id="initlocalstructure">initialise the pages of a topic</key>
+</i18n>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.bo.general" lcid="en_GB">
-	<key id="module-name">Photo album</key>
-	<key id="system-folder-name">Photo album</key>
-	<key id="generalities">main data</key>
-	<key id="publication">publication</key>
-	<key id="visual">visual</key>
+  <key id="module-name">Photo album</key>
+  <key id="system-folder-name">Photo album</key>
+  <key id="generalities">main properties</key>
+  <key id="publication">publication</key>
+  <key id="visual">visual element</key>
+  <key id="some-pages-already-initialized">Some of the global pages have already been initialised for this site.</key>
+  <key id="topic-already-contains-some-of-this-pages">This topic already contains some of the pages.</key>
 </i18n>

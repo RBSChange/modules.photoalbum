@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.bo.blocks.albumcontextuallist" lcid="en_GB">
   <key id="printcontainer">Display the topic</key>
-  <key id="printcontainer-help">Display the topic's label before the album list</key>
+  <key id="printcontainer-help">Displays the topic label before the album list.</key>
+  <key id="itemsperpage">elements per page</key>
+  <key id="itemsperpage-help">Specify the maximum number of elements to display on each page here.</key>
+  <key id="showdetailsincurrenttopic">details page in the topic</key>
+  <key id="showdetailsincurrenttopic-help">Select "yes" for the documents to be displayed in the current topic. Select "no" for them to be displayed in their primary topic.</key>
+  <key id="title">list of the topic's albums</key>
 </i18n>

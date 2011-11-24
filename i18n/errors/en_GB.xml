@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.errors" lcid="en_GB">
-  <key id="modules-photoalbum-getpreferencesdocument">you don't have the appropriate permission to perform this operation : ″Open preferences window″</key>
-  <key id="modules-photoalbum-move-rootfolder">you don't have the appropriate permission to perform this operation : ″Add a topic″</key>
-  <key id="modules-photoalbum-remove-topic">you don't have the appropriate permission to perform this operation : ″Remove a topic″</key>
-  <key id="modules-photoalbum-editlocale">you don't have the appropriate permission to perform this operation : ″Edit a locale″</key>
-  <key id="modules-photoalbum-order">you don't have the appropriate permission to perform this operation : ″Sort out the elements″</key>
-  <key id="modules-photoalbum-activate-album">you don't have the appropriate permission to perform this operation : ″Activate a picture slide show″</key>
-  <key id="modules-photoalbum-activate-photo">you don't have the appropriate permission to perform this operation : ″Activate a picture″</key>
-  <key id="modules-photoalbum-cancel-album">you don't have the appropriate permission to perform this operation : ″Cancel a picture slide show″</key>
-  <key id="modules-photoalbum-cancel-photo">you don't have the appropriate permission to perform this operation : ″Cancel a picture″</key>
-  <key id="modules-photoalbum-deactivated-photo">you don't have the appropriate permission to perform this operation : ″Désactiver a picture″</key>
-  <key id="modules-photoalbum-deactivated-album">you don't have the appropriate permission to perform this operation : ″Désactiver a picture slide show″</key>
-  <key id="modules-photoalbum-reactivate-photo">you don't have the appropriate permission to perform this operation : ″Activate a picture slide show″</key>
-  <key id="modules-photoalbum-reactivate-album">you don't have the appropriate permission to perform this operation : ″Activate a picture″</key>
-  <key id="modules-photoalbum-enabled">you don't have the appropriate permission to perform this operation : ″Access to the module″</key>
+  <key id="modules-photoalbum-getpreferencesdocument">you do not have the appropriate permissions to perform the following operation: "Open preferences"</key>
+  <key id="modules-photoalbum-move-rootfolder">you do not have the appropriate permissions to perform the following operation: "Add a topic"</key>
+  <key id="modules-photoalbum-remove-topic">you do not have the appropriate permissions to perform the following operation: "Remove a topic"</key>
+  <key id="modules-photoalbum-editlocale">you do not have the appropriate permissions to perform the following operation: "Edit a locale"</key>
+  <key id="modules-photoalbum-order">you do not have the appropriate permissions to perform the following operation: "Reorder the elements"</key>
+  <key id="modules-photoalbum-activate-album">you do not have the appropriate permissions to perform the following operation: "Activate album"</key>
+  <key id="modules-photoalbum-activate-photo">you do not have the appropriate permissions to perform the following operation: "Activate photo"</key>
+  <key id="modules-photoalbum-cancel-album">you do not have the appropriate permissions to perform the following operation: "Cancel album"</key>
+  <key id="modules-photoalbum-cancel-photo">you do not have the appropriate permissions to perform the following operation: "Cancel photo"</key>
+  <key id="modules-photoalbum-deactivated-photo">you do not have the appropriate permissions to perform the following operation: "Deactivate photo"</key>
+  <key id="modules-photoalbum-deactivated-album">you do not have the appropriate permissions to perform the following operation: "Deactivate album"</key>
+  <key id="modules-photoalbum-reactivate-photo">you do not have the appropriate permissions to perform the following operation: "Activate album"</key>
+  <key id="modules-photoalbum-reactivate-album">you do not have the appropriate permissions to perform the following operation: "Activate photo"</key>
+  <key id="modules-photoalbum-enabled">you do not have the appropriate permissions to perform the following operation: "Access the module"</key>
+  <key id="modules-photoalbum-move-topic">You do not have the appropriate permission to move this topic to this location.</key>
 </i18n>

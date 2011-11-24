@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <i18n baseKey="m.photoalbum.document.album" lcid="en_GB">
-	<key id="document-name">album</key>
-	<key id="label">album label</key>
-	<key id="label-help">titre de l'album</key>
-	<key id="summary">summary</key>
-	<key id="startpublicationdate">start</key>
-	<key id="endpublicationdate">end</key>
+  <key id="document-name">album</key>
+  <key id="label">album label</key>
+  <key id="label-help">album label</key>
+  <key id="summary">description</key>
+  <key id="startpublicationdate">start</key>
+  <key id="endpublicationdate">end</key>
+  <key id="endpublicationdate-help">The publication end date indicates the date until which the album may be viewed by visitors. After this date, the album will no longer be available for viewing.</key>
+  <key id="startpublicationdate-help">The publication start date indicates the date from which the album may be viewed by visitors. Before this date, the album will not be available for viewing.</key>
+  <key id="summary-help">This is the album description.</key>
+  <key id="topic">topics</key>
+  <key id="topic-help">Topics in which this album must be inserted.</key>
 </i18n>

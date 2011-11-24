@@ -2,7 +2,13 @@
 <i18n baseKey="m.photoalbum.bo.blocks.album" lcid="en_GB">
   <key id="defaultcmpref">Default album</key>
   <key id="defaultmode">Display mode</key>
-  <key id="usediaporama">Enable diaporama functionality</key>
-  <key id="diaporamaincludestext">Display text in diaporama view</key>
-  <key id="photoinselector">Number of pictures per page</key>
+  <key id="usediaporama">Enable slide shows</key>
+  <key id="diaporamaincludestext">Display text in the slide show view</key>
+  <key id="photoinselector">Number of photographs per page</key>
+  <key id="defaultcmpref-help">This is the album to display when no album is available.</key>
+  <key id="defaultmode-help">Choose whether to start in standard mode or in slide show mode.</key>
+  <key id="diaporamaincludestext-help">In slide show mode, the text of the photographs will be displayed.</key>
+  <key id="photoinselector-help">This is the maximum number of photographs per page.</key>
+  <key id="title">album detail</key>
+  <key id="usediaporama-help">Activates the slide show function.</key>
 </i18n>
