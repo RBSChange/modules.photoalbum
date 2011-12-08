@@ -34,4 +34,6 @@
   <key id="log-savepermissions-album">log-savepermissions-album</key>
   <key id="saveredirectinfo-album">saveredirectinfo.album {lang} {documentlabel}</key>
   <key id="log-saveredirectinfo-album">log saveredirectinfo album</key>
+  <key id="update-photo">update.photo {lang} {documentlabel}</key>
+  <key id="log-update-photo">log update photo</key>
 </i18n>

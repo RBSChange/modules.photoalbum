@@ -18,4 +18,5 @@
   <actiondef modulename="photoalbum" actionname="reactivate.album" label="modules.photoalbum.bo.useractionlogger.reactivate-album"/>
   <actiondef modulename="photoalbum" actionname="savepermissions.album" label="modules.photoalbum.bo.useractionlogger.savepermissions-album"/>
   <actiondef modulename="photoalbum" actionname="saveredirectinfo.album" label="m.photoalbum.bo.useractionlogger.saveredirectinfo-album"/>
+  <actiondef modulename="photoalbum" actionname="update.photo" label="m.photoalbum.bo.useractionlogger.update-photo"/>
 </script>

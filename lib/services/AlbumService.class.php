@@ -144,18 +144,18 @@ class photoalbum_AlbumService extends f_persistentdocument_DocumentService
 	
 	/**
 	 * @param photoalbum_persistentdocument_album $document
+	 * @param array<string, string> $attributes
+	 * @param integer $mode
 	 * @param string $moduleName
-	 * @param string $treeType
-	 * @param array<string, string> $nodeAttributes
-	 */	
-	public function addTreeAttributes($document, $moduleName, $treeType, &$nodeAttributes)
+	 */
+	public function completeBOAttributes($document, &$attributes, $mode, $moduleName)
 	{
-		if ($treeType == 'wlist')
+		if ($mode & DocumentHelper::MODE_CUSTOM)
 		{
 			$media = $document->getThumbnail();
 			if ($media !== null)
 			{
-		    	$nodeAttributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
+		    	$attributes['thumbnailsrc'] = MediaHelper::getPublicFormatedUrl($media, "modules.uixul.backoffice/thumbnaillistitem");
 			}
 		}
 	}
