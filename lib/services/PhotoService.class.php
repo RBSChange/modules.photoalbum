@@ -86,6 +86,27 @@ class photoalbum_PhotoService extends f_persistentdocument_DocumentService
 			$document->setMediahd($mediaService->importFromTempFile($tmpMedia));
 		}
 	}
+	
+	/**
+	 * @param photoalbum_persistentdocument_photo $document
+	 */
+	protected function postDelete($document)
+	{
+		$this->deleteMediaIfNotInTree($document->getMedia());
+		$this->deleteMediaIfNotInTree($document->getMediahd());
+		$this->deleteMediaIfNotInTree($document->getThumbnail());
+	}
+	
+	/**
+	 * @param media_persistentdocument_media $media
+	 */
+	protected function deleteMediaIfNotInTree($media)
+	{
+		if ($media !== null && $media->getTreeId() === null)
+		{
+			$media->delete();
+		}
+	}
 
 	/**
 	 * Methode à surcharger pour effectuer des post traitement apres le changement de status du document
