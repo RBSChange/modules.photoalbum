@@ -93,7 +93,7 @@ class photoalbum_patch_0350 extends patch_BasePatch
 		
 		foreach ($topic->getDocumentService()->getChildrenOf($topic, 'modules_website/topic') as $subTopic)
 		{
-			$this->migrateTopic($topic, $folderId, $ts, $fs);
+			$this->migrateTopic($subTopic, $folderId, $ts, $fs);
 		}
 	}
 }
