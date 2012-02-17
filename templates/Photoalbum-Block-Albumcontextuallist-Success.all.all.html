@@ -1,6 +1,6 @@
 <h1 tal:condition="configuration/getPrintcontainer" change:h="">${container/getLabelAsHtml}</h1>
 <ul class="document-list" tal:condition="paginator">
-	<li tal:repeat="doc paginator" class="${php: repeat.doc.odd ? 'odd' : 'even'}">
+	<li tal:repeat="doc paginator" class="${alternateclass:albumIndex}">
 		<tal:block tal:condition="configuration/getShowDetailsInCurrentTopic" change:include="module 'photoalbum'; template 'Photoalbum-Inc-Album-Item'; type 'html'; item doc; topicId container/getId" />
 		<tal:block tal:condition="not: configuration/getShowDetailsInCurrentTopic" change:include="module 'photoalbum'; template 'Photoalbum-Inc-Album-Item'; type 'html'; item doc;" />
 	</li>
