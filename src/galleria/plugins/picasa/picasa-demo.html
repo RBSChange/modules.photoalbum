@@ -25,16 +25,16 @@
         <!-- load Galleria -->
         <script src="../../galleria-1.2.6.min.js"></script>
 
-        <!-- load flickr plugin -->
-        <script src="galleria.flickr.min.js"></script>
+        <!-- load picasa plugin -->
+        <script src="galleria.picasa.min.js"></script>
 
     </head>
 <body>
     <div class="content">
-        <h1>Galleria Flickr Plugin Demo</h1>
-        <p>Demonstrating a basic gallery example with a Flickr search.</p>
+        <h1>Galleria Picasa Plugin Demo</h1>
+        <p>Demonstrating a basic gallery example with photos from a Picasa album.</p>
 
-        <!-- Adding gallery images. This is just a container for the dynamic flickr images -->
+        <!-- Adding gallery images. This is just a container for the dynamic picasa images -->
 
         <div id="galleria"></div>
 
@@ -45,12 +45,9 @@
     // Load the classic theme
     Galleria.loadTheme('../../themes/classic/galleria.classic.min.js');
 
-    // Initialize Galleria
     $('#galleria').galleria({
-        flickr: 'search:cityscape',
-        flickrOptions: {
-            sort: 'interestingness-desc'
-        }
+        // The user & album. This example fetches the album "Demo" from the user "galleriajs"
+        picasa: 'useralbum:galleriajs/Demo'
     });
 
     </script>
