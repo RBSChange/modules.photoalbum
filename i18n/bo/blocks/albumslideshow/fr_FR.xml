@@ -11,5 +11,18 @@
 	<key id="lightbox">activer le zoom</key>
 	<key id="transition">effet de transition</key>
 	<key id="autoplay">défilement automatique</key>
+	<key id="autoplaydelay">délais entre les photos (en seconde)</key>
 	<key id="showblocktitle">afficher le titre</key>
+	<key id="slideshowheight-help">hauteur du diaporama</key>
+	<key id="slideshowwidth-help">largeur du diaporama</key>
+	<key id="imageheight-help">hauteur maximale des images</key>
+	<key id="imagewidth-help">largeur maximale des images</key>
+	<key id="showthumbnails-help">afficher les miniatures</key>
+	<key id="thumbheight-help">hauteur maximale des miniatures</key>
+	<key id="thumbwidth-help">largeur maximale des miniatures</key>
+	<key id="lightbox-help">activer le zoom</key>
+	<key id="transition-help">effet de transition</key>
+	<key id="autoplay-help">défilement automatique</key>
+	<key id="autoplaydelay-help">délais entre les photos (en seconde)</key>
+	<key id="showblocktitle-help">afficher le titre</key>
 </i18n>

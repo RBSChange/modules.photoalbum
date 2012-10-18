@@ -11,7 +11,7 @@
 		</page>
 
 		<page label="Album" navigationVisibility="hidden" indexingstatus="false"
-			byTag="functional_photoalbum_album-detail" metatitle="Album : {photoalbum_album.label}" description="{photoalbum_album.description}">
+			byTag="functional_photoalbum_album-detail" metatitle="Album : {photoalbum_albumSlideshow.label}" description="{photoalbum_albumSlideshow.description}">
 			<changecontent for="content-block">
 				<changeblock type="modules_photoalbum_AlbumSlideshow" __imageHeight="350" __slideshowHeight="420" />
 			</changecontent>

@@ -16,8 +16,8 @@ class photoalbum_BlockAlbumSlideshowAction extends website_BlockAction
 		{
 			return website_BlockView::NONE;
 		}
-	
-		$configuration = $this->getConfiguration();	
+		
+		$configuration = $this->getConfiguration();
 		$album = $this->getDocumentParameter();
 		$isOnDetailPage = TagService::getInstance()->hasTag($this->getContext()->getPersistentPage(), 'functional_photoalbum_album-detail');
 		if (!($album instanceof photoalbum_persistentdocument_album) || !$album->isPublished())
@@ -38,7 +38,24 @@ class photoalbum_BlockAlbumSlideshowAction extends website_BlockAction
 			$options[] = 'width: ' . $configuration->getSlideshowWidth();
 		}
 		$options[] = 'thumbnails: ' . ($configuration->getShowThumbnails() ? 'true' : 'false');
-		$options[] = 'autoplay: ' . ($configuration->getAutoplay() ? 'true' : 'false');
+		
+		$autoplay = $configuration->getAutoplay();
+		
+		$autoplayValue = 'false';
+		if ($autoplay)
+		{
+			$delay = $configuration->getAutoplayDelay();
+			if ($delay != null)
+			{
+				$autoplayValue = $delay * 1000;
+			}
+			else
+			{
+				$autoplayValue = 'true';
+			}
+		}
+		
+		$options[] = 'autoplay: ' . $autoplayValue;
 		$options[] = 'lightbox: ' . ($configuration->getLightbox() ? 'true' : 'false');
 		$options[] = 'transition: \'' . $configuration->getTransition() . "'";
 		$request->setAttribute('options', implode(', ', $options));
@@ -50,7 +67,7 @@ class photoalbum_BlockAlbumSlideshowAction extends website_BlockAction
 		
 		return website_BlockView::SUCCESS;
 	}
-
+	
 	/**
 	 * @return array<String, String>
 	 */
@@ -59,10 +76,7 @@ class photoalbum_BlockAlbumSlideshowAction extends website_BlockAction
 		$doc = $this->getDocumentParameter();
 		if ($doc instanceof photoalbum_persistentdocument_album && $doc->isPublished())
 		{
-			return array(
-				'label' => $doc->getLabel(), 
-				'description' => $doc->getSummary()
-			);
+			return array('label' => $doc->getLabel(), 'description' => $doc->getSummary());
 		}
 		return array();
 	}

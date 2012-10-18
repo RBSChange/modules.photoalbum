@@ -31,6 +31,9 @@
 				<constraints>min:40</constraints>
 			</parameter>
 			<parameter name="autoplay" type="Boolean" default-value="true" />
+			<parameter name="autoplayDelay" type="Integer">
+				<constraints>min:1</constraints>
+			</parameter>
 			<parameter name="lightbox" type="Boolean" default-value="true" />
 			<parameter name="transition" type="String" default-value="slide" list-id="modules_photoalbum/slideshowtransitions" required="true" />
 			<parameter name="showBlockTitle" type="Boolean" default-value="true" />
@@ -46,6 +49,8 @@
 					var fields = this.getFields();
 					fields.showThumbnails.addEventListener('fieldChanged', function(event) { me.onShowThumbnailsChange(); }, true);
 					me.addEventListener('gridValuesUpdated', function(event) { me.onShowThumbnailsChange(); }, true);
+					fields.autoplay.addEventListener('fieldChanged', function(event) { me.onAutoplayChange(); }, true);
+					me.addEventListener('gridValuesUpdated', function(event) { me.onAutoplayChange(); }, true);
 				]]></constructor>
 				<method name="onShowThumbnailsChange">
 					<body><![CDATA[
@@ -53,6 +58,13 @@
 						var collapsed = (fields.showThumbnails.value != 'true');
 						this.getElementByAnonId('thumbHeight_cnt').collapsed = collapsed;
 						this.getElementByAnonId('thumbWidth_cnt').collapsed = collapsed;
+					]]></body>
+				</method>
+				<method name="onAutoplayChange">
+					<body><![CDATA[
+						var fields = this.getFields();
+						var collapsed = (fields.autoplay.value != 'true');
+						this.getElementByAnonId('autoplayDelay_cnt').collapsed = collapsed;
 					]]></body>
 				</method>
 			</javascript>
