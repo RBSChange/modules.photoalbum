@@ -4,7 +4,7 @@
   <type>change-module</type>
   <license>os</license>
   <repository>public</repository>
-  <version>3.6.4</version>
+  <version>3.6.5</version>
   <description>Galerie de photos</description>
   <dependencies></dependencies>
 </change>
